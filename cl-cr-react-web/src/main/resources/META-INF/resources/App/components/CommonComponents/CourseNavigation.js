@@ -48,7 +48,7 @@ export default function CourseNavigation({ message, onContinue, onCancel }) {
                         </div>
                         <div className="btn-group-item">
                           <button
-                            className="btn btn-secondary"
+                            className="sdfd-btn btn secondary-btn"
                             type="button"
                             onClick={onCancel}
                           >

@@ -536,7 +536,7 @@ function SwitchEventsSection({
                         {switchContent ? (
                           <div
                             className="event_content "
-                            role="region"
+                            role="live"
                             aria-labelledby={
                               "accordionid" +
                               switchData?.section

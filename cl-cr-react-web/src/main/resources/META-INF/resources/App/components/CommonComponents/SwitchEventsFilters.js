@@ -362,7 +362,9 @@ function SwitchEventsFilters({
 
   return (
     <div className="fields-grp">
-      <label id={label + "-dropdown"}>{label}</label>
+      <label id={label + "-dropdown"} for={label + "levelFilterButton"}>
+        {label}
+      </label>
       <div
         className="DropdownList dropdown dropdown-btn"
         role="combobox"

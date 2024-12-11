@@ -70,7 +70,7 @@ export default function CourseConflictBox({
                       <div className="btn-group justify-content-center">
                         <div className="btn-group-item">
                           <button
-                            className="btn btn-primary"
+                            className="sdfd-btn btn primary-btn"
                             type="button"
                             onClick={handleConflictSubmit}
                           >
@@ -79,7 +79,7 @@ export default function CourseConflictBox({
                         </div>
                         <div className="btn-group-item">
                           <button
-                            className="btn btn-secondary"
+                            className="sdfd-btn btn secondary-btn"
                             type="button"
                             onClick={handleConflictClose}
                           >

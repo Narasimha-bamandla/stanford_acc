@@ -215,6 +215,11 @@
           background: #8c1515;
           color: $white;
         }
+        &:focus {
+          outline: 2px solid $primary-maroon !important;
+          background-color:  #8c151530 !important;
+          outline-offset: 2px; 
+        }
       }
       .calendar-btn.active {
         background: #8c1515;

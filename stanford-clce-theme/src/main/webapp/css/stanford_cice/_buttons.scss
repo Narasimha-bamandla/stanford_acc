@@ -2,302 +2,395 @@
 @import "colors";
 
 // Define the button styles as mixins
- 
+
 
 @mixin button-style() {
-  display: inline-flex; 
+  display: inline-flex;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
   font-style: normal;
-  font-weight: 600; 
-  border:1px solid;
+  font-weight: 600;
+  border: 1px solid;
   text-decoration: none;
+
   &:hover {
     text-decoration: none;
   }
 }
-@mixin border-radius($color){
-    border-radius: $color ;
+
+@mixin border-radius($color) {
+  border-radius: $color ;
 }
-@mixin filter-color($color){
-    filter: $color ;
+
+@mixin filter-color($color) {
+  filter: $color ;
 }
-@mixin gap($gap) { 
-  gap: $gap ; 
+
+@mixin gap($gap) {
+  gap: $gap ;
 }
-@mixin padding-style($padding-y, $padding-x ) {  
-  @if $padding-y == "0" {
+
+@mixin padding-style($padding-y, $padding-x ) {
+  @if $padding-y =="0" {
     margin-right: 5px;
-  } @else {
-    padding: $padding-y $padding-x; 
+  }
+
+  @else {
+    padding: $padding-y $padding-x;
   }
 }
-@mixin border-color($color ) { 
-    border: 1px solid $color; 
-  }
-@mixin font-style( $font-size, $line-height ) { 
+
+@mixin border-color($color ) {
+  border: 1px solid $color;
+}
+
+@mixin font-style($font-size, $line-height ) {
   font-size: $font-size;
   line-height: $line-height;
 }
-@mixin font-color-style( $bg, $color ) { 
-    @if $bg == "" { 
-      } @else   {
-        background-color: $bg ;
-      } 
-    color: $color ;
+
+@mixin font-color-style($bg, $color ) {
+  @if $bg =="" {}
+
+  @else {
+    background-color: $bg ;
+  }
+
+  color: $color ;
 }
-@mixin button-size($height , $width) { 
-height: $height ; 
-width: $width ; 
+
+@mixin button-size($height , $width) {
+  height: $height ;
+  width: $width ;
 }
-@mixin icon-size($size ) { 
-    height: $size ; 
-    width: $size ; 
-    }
-@mixin gap($gap) { 
-gap: $gap ; 
+
+@mixin icon-size($size ) {
+  height: $size ;
+  width: $size ;
 }
+
+@mixin gap($gap) {
+  gap: $gap ;
+}
+
 @mixin icon-position($position) {
-  @if $position == "before" {
+  @if $position =="before" {
     margin-right: 5px;
-  } @else if $position == "after" {
+  }
+
+  @else if $position =="after" {
     margin-left: 5px;
   }
 }
 
 // Apply the styles with different sizes, states, types, and icon positions
 .btn:focus {
-  box-shadow: none   !important;
-  outline:none !important;
-} 
+  box-shadow: none !important;
+  outline: 2px solid $primary-maroon !important;
+  outline-offset: 2px;
+}
+
 .sdfd-btn {
-  @include button-style();   
- 
-  &.primary-btn , &.secondary-btn {
-    &.sm-btn { 
-        @include button-size(32px, auto); 
-        @include padding-style(8px, 14px);  
-        @include font-style(14px, 16px);  
-        &.i-btn {   
-            @include icon-size(32px); 
-            img {
-                @include icon-size(12px); 
-            } 
-            @include border-radius(50%); 
-            @include padding-style(6px, 6px);    
-          }
-      } 
-      &.md-btn {
-        @include button-size(36px, auto);  
-        @include padding-style(6px, 16px);  
-        @include font-style(16px, 24px);   
-        &.i-btn { 
-            @include icon-size(36px); 
-            img {
-                @include icon-size(14px); 
-            } 
-            @include border-radius(50%); 
-            @include padding-style(8px, 8px);    
-          }
-      } 
-      &.lg-btn {
-        @include button-size(44px, auto); 
-        @include padding-style(10px, 18px);  
-        @include font-style(16px, 24px); 
-        &.i-btn { 
-            @include icon-size(44px); 
-            img {
-                @include icon-size(18px); 
-            } 
-            @include border-radius(50%); 
-            @include padding-style(10px, 10px);    
-          }   
+  @include button-style();
+
+  &.primary-btn,
+  &.secondary-btn {
+    &.sm-btn {
+      @include button-size(32px, auto);
+      @include padding-style(8px, 14px);
+      @include font-style(14px, 16px);
+
+      &.i-btn {
+        @include icon-size(32px);
+
+        img {
+          @include icon-size(12px);
+        }
+
+        @include border-radius(50%);
+        @include padding-style(6px, 6px);
       }
-    
-   }
+    }
+
+    &.md-btn {
+      @include button-size(36px, auto);
+      @include padding-style(6px, 16px);
+      @include font-style(16px, 24px);
+
+      &.i-btn {
+        @include icon-size(36px);
+
+        img {
+          @include icon-size(14px);
+        }
+
+        @include border-radius(50%);
+        @include padding-style(8px, 8px);
+      }
+    }
+
+    &.lg-btn {
+      @include button-size(44px, auto);
+      @include padding-style(10px, 18px);
+      @include font-style(16px, 24px);
+
+      &.i-btn {
+        @include icon-size(44px);
+
+        img {
+          @include icon-size(18px);
+        }
+
+        @include border-radius(50%);
+        @include padding-style(10px, 10px);
+      }
+    }
+
+  }
 
   &.primary-btn {
-    @include gap(8px); 
+    @include gap(8px);
+
     img {
-       @include filter-color($filter-white-color)
+      @include filter-color($filter-white-color)
     }
-    @include font-color-style($primary-maroon, $white);  
+
+    @include font-color-style($primary-maroon, $white);
     @include border-color($primary-maroon );
+
     &:hover {
-      @include font-color-style($secondary-color, $white);  
+      @include font-color-style($secondary-color, $white);
       @include border-color($secondary-color );
     }
+
     &:focus {
-      @include font-color-style($primary-maroon, $white);   
+      @include font-color-style($primary-maroon, $white);
       @include border-color($primary-maroon );
+      outline: 2px solid $primary-maroon !important;
+      outline-offset: 2px;
     }
-    &.disabled ,
+
+    &.disabled,
     &:disabled {
-        cursor: not-allowed;
-      @include font-color-style($disabled-color, $black-60-color);  
+      cursor: not-allowed;
+      @include font-color-style($disabled-color, $black-60-color);
       @include border-color($disabled-color );
+
       img {
         @include filter-color($filter-black-100-color)
-     }
-    }
-  } 
-  &.secondary-btn {
-    @include gap(8px); 
-  
-    img {
-        @include filter-color($black-100-color)
-     }
-    @include font-color-style($white, $black-100-color);  
-    @include border-color($black-60-color );
-    &:hover {
-      @include font-color-style($secondary-color, $white);  
-      img {
-        @include filter-color($filter-white-color)
-     }
-     @include border-color($secondary-color );
-    }
-    &:focus {
-      @include font-color-style($black-100-color, $white);   
-      img {
-        @include filter-color($filter-white-color)
-     } 
-     @include border-color($black-100-color );
-    }
-    &.disabled ,
-    &:disabled {
-        cursor: not-allowed;
-        @include font-color-style($bg-grey , $black-60-color);  
-        @include border-color($black-20-color );
-        img {
-            @include filter-color($filter-black-60-color)
-         }
-        &:hover {
-            @include font-color-style($bg-grey , $black-60-color);  
-            @include border-color($disabled-color );
-            img {
-                @include filter-color($filter-black-60-color)
-             } 
-        }
-     
-    }
-  } 
-  &.ghost-btn {
-    border:none !important;
-    background:none ;
-    &.sm-btn { 
-        @include button-size(auto, auto); 
-        @include font-style(14px, 16px);  
-        &.i-btn {    
-        @include padding-style(8px, 8px);  
-            @include icon-size(32px); 
-            img {
-                @include icon-size(12px); 
-            } 
-            @include border-radius(50%); 
-            @include padding-style(6px, 6px);    
-          }
-      } 
-      &.md-btn {
-        @include button-size(auto, auto);   
-        @include font-style(16px, 24px);   
-        &.i-btn { 
-            @include padding-style(10px, 10px);  
-            @include icon-size(36px); 
-            img {
-                @include icon-size(14px); 
-            } 
-            @include border-radius(50%); 
-            @include padding-style(8px, 8px);    
-          }
-      } 
-      &.lg-btn {
-        @include button-size(auto, auto);  
-        @include font-style(16px, 24px); 
-        &.i-btn { 
-            @include padding-style(12px, 12px);  
-            @include icon-size(44px); 
-            img {
-                @include icon-size(18px); 
-            } 
-            @include border-radius(50%); 
-            @include padding-style(10px, 10px);    
-          }   
       }
-    
-    @include gap(8px); 
-    @include padding-style(0, 0) ; 
+    }
+  }
+
+  &.secondary-btn {
+    @include gap(8px);
+
     img {
-        @include filter-color($black-100-color)
-     }
-     @include font-color-style('', $primary-maroon);    
+      @include filter-color($black-100-color)
+    }
+
+    @include font-color-style($white, $black-100-color);
+    @include border-color($black-60-color );
+
     &:hover {
-      @include font-color-style('', $secondary-color);  
+      @include font-color-style($secondary-color, $white);
+
+      img {
+        @include filter-color($filter-white-color)
+      }
+
+      @include border-color($secondary-color );
+    }
+
+    &:focus {
+      @include font-color-style($black-100-color, $white);
+      outline: 2px solid $primary-maroon !important;
+      outline-offset: 2px;
+
+      img {
+        @include filter-color($filter-white-color)
+      }
+
+      @include border-color($black-100-color );
+    }
+
+    &.disabled,
+    &:disabled {
+      cursor: not-allowed;
+      @include font-color-style($bg-grey , $black-60-color);
+      @include border-color($black-20-color );
+
+      img {
+        @include filter-color($filter-black-60-color)
+      }
+
+      &:hover {
+        @include font-color-style($bg-grey , $black-60-color);
+        @include border-color($disabled-color );
+
+        img {
+          @include filter-color($filter-black-60-color)
+        }
+      }
+
+    }
+  }
+
+  &.ghost-btn {
+    border: none !important;
+    background: none;
+
+    &.sm-btn {
+      @include button-size(auto, auto);
+      @include font-style(14px, 16px);
+
+      &.i-btn {
+        @include padding-style(8px, 8px);
+        @include icon-size(32px);
+
+        img {
+          @include icon-size(12px);
+        }
+
+        @include border-radius(50%);
+        @include padding-style(6px, 6px);
+      }
+    }
+
+    &.md-btn {
+      @include button-size(auto, auto);
+      @include font-style(16px, 24px);
+
+      &.i-btn {
+        @include padding-style(10px, 10px);
+        @include icon-size(36px);
+
+        img {
+          @include icon-size(14px);
+        }
+
+        @include border-radius(50%);
+        @include padding-style(8px, 8px);
+      }
+    }
+
+    &.lg-btn {
+      @include button-size(auto, auto);
+      @include font-style(16px, 24px);
+
+      &.i-btn {
+        @include padding-style(12px, 12px);
+        @include icon-size(44px);
+
+        img {
+          @include icon-size(18px);
+        }
+
+        @include border-radius(50%);
+        @include padding-style(10px, 10px);
+      }
+    }
+
+    @include gap(8px);
+    @include padding-style(0, 0);
+
+    img {
+      @include filter-color($black-100-color)
+    }
+
+    @include font-color-style('', $primary-maroon);
+
+    &:hover {
+      @include font-color-style('', $secondary-color);
+
       img {
         @include filter-color($filter-secondary-color)
-     } 
+      }
     }
+
     &:focus {
-      @include font-color-style('', $primary-maroon);   
+      @include font-color-style('', $primary-maroon);
+      outline: 2px solid $primary-maroon !important;
+      outline-offset: 2px;
+
       img {
         @include filter-color($filter-primary-maroon)
-     }  
+      }
     }
-    &.disabled ,
+
+    &.disabled,
     &:disabled {
-        @include font-color-style('' , $black-20-color);  
-        @include border-color($black-20-color );
-        cursor: not-allowed;
+      @include font-color-style('', $black-20-color);
+      @include border-color($black-20-color );
+      cursor: not-allowed;
+
+      img {
+        @include filter-color($filter-black-20-color)
+      }
+
+      &:hover {
+        @include font-color-style('', $black-20-color);
+        @include border-color($disabled-color );
+
         img {
-            @include filter-color($filter-black-20-color)
-         }
-        &:hover {
-            @include font-color-style('' , $black-20-color);  
-            @include border-color($disabled-color );
-            img {
-                @include filter-color($filter-black-20-color)
-             } 
+          @include filter-color($filter-black-20-color)
         }
-     
+      }
+
     }
-  } 
+  }
+
   &.gray-btn {
-    @include gap(8px); 
-  
+    @include gap(8px);
+
     img {
-        @include filter-color($black-80-color)
-     }
-    @include font-color-style($black-20-color, $black-80-color);  
+      @include filter-color($black-80-color)
+    }
+
+    @include font-color-style($black-20-color, $black-80-color);
     @include border-color($black-20-color );
+
     &:hover {
-      @include font-color-style($white, $black-80-color);  
+      @include font-color-style($white, $black-80-color);
+
       img {
         @include filter-color($black-80-color)
-     }
-     @include border-color($black-20-color );
+      }
+
+      @include border-color($black-20-color );
     }
+
     &:focus {
-      @include font-color-style($black-80-color, $white);   
+      @include font-color-style($black-80-color, $white);
+      outline: 2px solid $primary-maroon !important;
+      outline-offset: 2px;
+
       img {
         @include filter-color($filter-white-color)
-     } 
-     @include border-color($black-80-color );
+      }
+
+      @include border-color($black-80-color );
     }
-    &.disabled ,
+
+    &.disabled,
     &:disabled {
-        cursor: not-allowed;
-        @include font-color-style($bg-grey , $black-60-color);  
-        @include border-color($black-20-color );
+      cursor: not-allowed;
+      @include font-color-style($bg-grey , $black-60-color);
+      @include border-color($black-20-color );
+
+      img {
+        @include filter-color($filter-black-60-color)
+      }
+
+      &:hover {
+        @include font-color-style($bg-grey , $black-60-color);
+        @include border-color($disabled-color );
+
         img {
-            @include filter-color($filter-black-60-color)
-         }
-        &:hover {
-            @include font-color-style($bg-grey , $black-60-color);  
-            @include border-color($disabled-color );
-            img {
-                @include filter-color($filter-black-60-color)
-             } 
+          @include filter-color($filter-black-60-color)
         }
-     
+      }
+
     }
   }
 }

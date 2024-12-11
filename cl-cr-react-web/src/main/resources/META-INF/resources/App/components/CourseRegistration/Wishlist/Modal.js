@@ -41,7 +41,7 @@ const Modal = ({ onOpenChange, open, message, onHandleClosePopup }) => {
                 <div className="modal-footer">
                   <div className="modal-item-last">
                     <button
-                      className="btn btn-primary"
+                      className="sdfd-btn btn primary-btn"
                       type="button"
                       tabindex="0"
                       onClick={onHandleClose}

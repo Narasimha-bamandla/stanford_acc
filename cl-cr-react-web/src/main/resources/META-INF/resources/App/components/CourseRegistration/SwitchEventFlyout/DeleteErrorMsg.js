@@ -53,7 +53,7 @@ export default function DeleteErrorMsg({ handleKeep, handleDelete }) {
                       <div className="btn-group justify-content-center">
                         <div className="btn-group-item">
                           <button
-                            className="btn btn-secondary"
+                            className="sdfd-btn btn secondary-btn"
                             type="button"
                             onClick={handleKeep}
                             style={{
@@ -66,7 +66,7 @@ export default function DeleteErrorMsg({ handleKeep, handleDelete }) {
                         </div>
                         <div className="btn-group-item">
                           <button
-                            className="btn btn-primary"
+                            className="sdfd-btn btn primary-btn"
                             type="button"
                             onClick={handleDelete}
                           >
