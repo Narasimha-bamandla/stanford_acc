@@ -1,0 +1,47 @@
+@import 'colors';
+
+.course_info {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 24px;
+    .course_info-data {
+        display: flex;
+        width: 950px;
+        align-items: flex-start;
+        gap: 40px;
+        align-self: stretch;  
+        .columns {
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+            flex: 1 0 0;
+            flex-direction: column;
+        }
+
+        .data {
+            flex: 1 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+            align-self: stretch;
+            border-bottom: 1px solid $black-20-color;
+        }
+
+        label {
+            color: $black-color-2;
+            font-weight: 400;
+            margin: 0;
+        }
+
+        .data-text {
+            color: $black-100-color;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 24px;
+            padding-bottom: 8px;
+        }
+    }
+}

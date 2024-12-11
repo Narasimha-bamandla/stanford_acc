@@ -1,0 +1,88 @@
+// Define your color variables
+@import "colors";
+
+// Define the button styles as mixins
+
+@mixin checkbox-style($bordercolor, $bg) {
+  border-radius: 2px;
+  border: 1px solid $bordercolor;
+  background: $bg;
+  flex-shrink: 0;
+}
+@mixin checkbox-size($size) {
+  width: $size;
+  height: $size;
+}
+
+.custom-control {
+  padding: 0;
+  min-height: inherit;
+  margin: 0;
+  label {
+    padding: 0;
+  }
+  & .bold.custom-control-input + .custom-control-label {
+    .custom-control-label-text {
+      font-weight: 600;
+    }
+  }
+  &.custom-checkbox {
+    .custom-control-label-text {
+      color: $black-80-color;
+      font-size: 14px;
+    }
+    & .custom-control-input.sm ~ .custom-control-label {
+      .custom-control-label-text {
+        line-height: 16px;
+        padding-left: 6px;
+      }
+      &:before,
+      &:after {
+        @include checkbox-size(16px);
+      }
+    }
+    & .custom-control-input.lg ~ .custom-control-label {
+      .custom-control-label-text {
+        font-size: 16px;
+        line-height: 24px;
+        padding-left: 10px;
+      }
+      &:before,
+      &:after {
+        @include checkbox-size(20px);
+      }
+    }
+    .custom-control-input ~ .custom-control-label {
+      &:before {
+        @include checkbox-style($black-80-color, $white);
+      }
+    }
+    .custom-control-input:checked ~ .custom-control-label {
+      &:before {
+        @include checkbox-style($black-80-color, $black-80-color);
+      }
+    }
+    .custom-control-input:disabled ~ .custom-control-label {
+      .custom-control-label-text {
+        color: $black-20-color;
+      }
+      &:before {
+        @include checkbox-style($black-20-color, $bg-grey);
+      }
+    }
+    .custom-control-input:disabled:checked ~ .custom-control-label {
+      &:before {
+        @include checkbox-style($black-20-color !important, $bg-grey);
+      }
+      &:after {
+        filter: invert(1);
+        opacity: 0.2;
+      }
+    }
+  }
+}
+
+
+ 
+
+ 

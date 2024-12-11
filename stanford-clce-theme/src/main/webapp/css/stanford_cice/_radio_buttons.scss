@@ -1,0 +1,84 @@
+// Define your color variables
+@import "colors";
+
+// Define the button styles as mixins
+ 
+
+@mixin radio-style( $bordercolor, $bg ) {
+  border-radius: 50%;
+  border: 1px solid $bordercolor;
+  background:$bg;
+  flex-shrink: 0;  
+}
+@mixin radio-size($size) {
+  width: $size;
+  height: $size;
+}
+ 
+.custom-control   {
+  padding: 0   !important;
+  min-height: inherit;
+  margin-bottom: 0 !important;
+  label {
+    padding: 0;
+  }
+  &.custom-radio  {
+    .custom-control-label-text {
+      color:$black-80-color;
+      font-size: 14px;
+   }
+  & .custom-control-input.sm  ~ .custom-control-label { 
+    .custom-control-label-text { 
+      line-height: 16px;
+      padding-left: 8px;
+   }
+      &:before, &:after {
+        @include radio-size (16px) 
+      }  
+  }
+  & .custom-control-input.lg  ~ .custom-control-label { 
+    .custom-control-label-text {
+      font-size: 16px;
+      line-height: 24px;
+      padding-left: 8px;
+   }
+    &:before   {
+        @include radio-size (20px); 
+      }  
+  }
+  .custom-control-input:active ~ .custom-control-label ,
+  .custom-control-input ~ .custom-control-label { 
+      &:before {   
+       @include radio-style($black-80-color, $white) 
+      }
+      &:after {
+        display: none;
+      } 
+    }  
+    .custom-control-input.sm:checked ~ .custom-control-label  {  
+      &:before {    
+        border-width: 5px; 
+      }
+    }  
+    .custom-control-input.lg:checked ~ .custom-control-label  {  
+      &:before {    
+        border-width: 6.5px; 
+      }
+    } 
+    .custom-control-input:disabled ~ .custom-control-label { 
+      .custom-control-label-text {
+        color:$black-20-color;
+     }
+      &:before {   
+       @include radio-style($black-20-color, $bg-grey) 
+      } 
+    } 
+    .custom-control-input:disabled:checked ~ .custom-control-label  {   
+      &:before { 
+        @include radio-style( $black-20-color !important, $bg-grey) 
+      } 
+    } 
+
+ 
+  }
+}

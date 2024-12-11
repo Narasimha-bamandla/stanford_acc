@@ -1,0 +1,50 @@
+.cr_home_upcoming_events {
+  margin-bottom: 20px;
+  .content-head {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    .pagination {
+      margin: 0;
+      ul {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+      }
+      .nav-link {
+        padding: 0;
+        color: $black-color-2;
+        svg {
+          color: $black-color-2;
+        }
+        button {
+          padding: 10px;
+        }
+      }
+      .nav-link.disabled {
+        svg {
+          color: $disabled-color;
+        }
+      }
+    }
+  }
+  .content-body {
+    &.hidden {
+      display: none;
+    }
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+    .date_month {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

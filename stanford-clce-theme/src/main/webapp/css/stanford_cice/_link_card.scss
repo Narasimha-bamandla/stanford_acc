@@ -1,0 +1,66 @@
+@import 'colors';
+
+.link_cards {
+    width: 950px; 
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    align-self: stretch; 
+    .link_card {
+        display: flex;
+        padding: 20px 10px;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        flex: 1 0 0;
+        align-self: stretch;
+        border: 1px solid $black-20-color;
+        cursor: pointer; 
+        max-width: 179px;
+        min-height: 164px;
+        justify-content: center;
+        text-decoration: none;
+        @media (min-width:1920px) {
+            min-width: 179px;
+        }
+        .link_card-icon {
+            width: 32px;
+            height: 32px;
+        }
+
+        .link_card-text {
+            color: $primary-balck;
+            text-align: center;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 24px;
+            min-height: 50px; 
+        }
+        &a:hover {
+            .link_card-text {
+                text-decoration: underline;
+            }
+        }
+        svg {
+            color:$black-100-color;
+        }
+        &:hover,
+        &.active,
+        .active {
+            background: $bg-grey;
+            border-color: $bg-grey;
+            color:$primary-maroon; 
+            svg {
+                color:$primary-maroon;
+            }
+            img {
+                filter: brightness(0) saturate(100%) invert(16%) sepia(38%) saturate(5466%) hue-rotate(348deg) brightness(84%) contrast(98%)
+            }
+            .link_card-text {
+                text-decoration: underline;
+                color:$primary-maroon;
+            }
+        }
+    }
+}

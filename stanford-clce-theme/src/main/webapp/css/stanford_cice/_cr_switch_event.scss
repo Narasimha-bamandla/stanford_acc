@@ -1,0 +1,283 @@
+.course_registration {
+  .cr_info-banner {
+    .title-btn {
+      display: grid;
+      grid-template-columns: auto max-content;
+      align-items: center;
+    }
+  }
+
+  .coursedetail-tooltip-containter {
+    position: relative;
+    width: fit-content;
+    strong {
+      cursor: pointer;
+      width: auto;
+    } 
+    &:focus,
+    &:hover {
+      .coursedetail-tooltip {
+        display: flex;
+      }
+    }
+  }
+  .coursedetail-tooltip {
+    display: none;
+    position: absolute;
+    background: $bg-grey;
+    color: $black-100-color;
+    border: 1px solid $black-20-color;
+    padding: 12px 16px 12px 16px;
+    width: 334px;
+    min-height: 88px;
+    bottom: 25px;
+    left: 0;
+    box-sizing: border-box;
+    font-size: 14px;
+    gap: 8px;
+    flex-direction: column;
+    strong {
+      font-weight: 700;
+      color: $black-80-color;
+      font-size: 12px;
+    }
+    .switchcount {
+      font-weight: 400;
+      color: $secondary-color;
+    }
+  }
+  .cr_switch_event {
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid $black-20-color;
+    background-color: $white;
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border: 1px solid $black-20-color;
+    background-color: $white;
+    padding: 24px 20px;
+    .event {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 8px;
+      flex-direction: column;
+      width: 100%;
+      border: 1px solid $black-20-color;
+      position: relative;
+      .border-bottom {
+        border-bottom: 1px solid #c2c2c2 !important;
+      }
+      .count {
+        background: #417865;
+        color: $white;
+        width: 26px;
+        height: 26px;
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        left: -13px;
+        top: -13px;
+      }
+    }
+    ul.tag_list {
+      padding: 0;
+      margin: 0;
+      gap: 8px;
+      display: flex;
+      list-style: none;
+      .tag {
+        background: $tag;
+        color: $primary-maroon;
+        font-weight: 600;
+      }
+      li {
+        position: relative;
+        z-index: 0;
+      }
+      .tag.yellow {
+        background: #fedd5c;
+        color: $black-100-color;
+      }
+    }
+    .timeconflict-tooltip-containter {  
+     	&:focus,
+        &:hover {
+        .timeconflict-tooltip {
+          display: flex;
+        }
+      }
+    }
+    .timeconflict-tooltip {
+      display: none;
+      position: absolute;
+      background: $bg-grey;
+      color: $black-100-color;
+      padding: 7px 0 12px;
+      width: 218px;
+      min-height: 80px;
+      bottom: 35px;
+      left: 0;
+      box-sizing: border-box;
+      font-size: 12px;
+      gap: 8px;
+      flex-direction: column;
+      &:before {
+        position: absolute;
+        border: 10px solid #dcdbdb;
+        bottom: -20px;
+        left: 18px;
+        content: "";
+        border-color: #dcdbdb transparent transparent;
+      }
+      strong {
+        font-weight: 700;
+        color: $primary-maroon;
+        z-index: 2;
+        position: relative;
+      }
+
+      & .item {
+        position: relative;
+        padding: 5px 16px 0;
+        &:before {
+          height: 40px;
+          right: -15px;
+          bottom: -6px;
+          content: "";
+          width: 50%;
+          background: linear-gradient(
+            to bottom,
+            $bg-grey 0%,
+            rgba(255, 255, 255, 0) 100%
+          );
+          box-shadow: 0px 15px 10px -15px rgba(0, 0, 0, 0.1);
+          position: absolute;
+          z-index: 0;
+        }
+        &:last-child::before {
+          display: none;
+        }
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        border: 1px solid $black-20-color;
+        width: 100%;
+        z-index: 1;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+    }
+
+    .event_head {
+      background: $bg-grey;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 8px;
+      width: 100%;
+      padding: 12px 20px;
+      min-height: 55px;
+      .btn-group {
+        min-width: fit-content;
+      }
+    }
+    .event_content {
+      justify-content: flex-start;
+      align-items: center;
+      gap: 8px;
+      width: 100%;
+    }
+    .btn-group {
+      .calendar-btn {
+        color: $primary-maroon;
+        border: 1px solid $black-20-color;
+        border-radius: 50% !important;
+        width: 24px;
+        height: 24px;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        padding: 0;
+        &:hover {
+          background: #8c1515;
+          color: $white;
+        }
+      }
+      .calendar-btn.active {
+        background: #8c1515;
+        color: $white;
+      }
+    }
+    .event_alert {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 6px 12px;
+      border: 1px solid $black-20-color;
+      gap: 10px;
+      background: #fff;
+      * {
+        color: $conflict-color;
+      }
+    }
+    .filters {
+      display: flex;
+      gap: 10px;
+      padding: 24px 20px 12px 20px;
+      flex-wrap: wrap;
+      .fields-grp {
+        width: 23%;
+        min-width: 170px;
+        label {
+          font-size: 12px;
+        }
+      }
+    }
+    .frm-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      .frm-item {
+        position: relative;
+        .tag-line {
+          width: 4px;
+          bottom: 2px;
+          position: absolute;
+          top: -10px;
+          left: -10px;
+          background: transparent;
+        }
+      }
+      .disabled {
+        color: $black-60-color;
+        background: $bg-grey;
+      }
+    }
+  }
+  .cr_switch_event.timeconflict-tooltip-containter {
+    position: relative;
+  }
+  .DropdownList .dropdown-menu,
+  .DropdownList .dropdown-menu.show {
+    min-width: 100%;
+  }
+  .switch-dropdown-menu {
+    label {
+      padding-right: 10px !important;
+      margin-right: 0px !important;
+    }
+  }
+}

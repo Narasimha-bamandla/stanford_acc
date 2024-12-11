@@ -1,0 +1,55 @@
+// Define your color variables
+@import "colors";
+  
+// Apply the styles with different sizes, states, types, and icon positions
+ 
+.sdtd-slider {
+	width: 100%;  
+    .clay-range-input {
+        .tooltip-inner { 
+            background: $bg-grey;
+			border: 1px solid  $black-20-color;
+        color: $white;
+		border-radius: 0;
+		color:$black-100-color; 
+		box-shadow: none;
+        }
+	.clay-tooltip-top {
+		.tooltip-arrow {
+			width: 0;
+			height: 0;
+			background: transparent;
+			border: 10px solid transparent ;
+			border-width: 10px 10px 10px;
+			border-color: transparent $black-20-color $black-20-color transparent;
+			z-index: -1;
+			margin-left: -10px; 
+		}
+	}
+	.tooltip {
+		margin-left: 0.475rem;
+	}
+	.form-control-range {
+		height: 16px;
+	}
+	.clay-range-thumb {
+		width: 16px   !important;
+		height: 16px !important;
+		flex-shrink: 0;
+		width: 100%;
+		border-radius: 12px;
+		border: 2px solid  $primary-maroon;
+		background: $white;
+		margin-top: -9px;
+	}
+	.clay-range-progress {
+		background-color: $primary-maroon;
+		height: 2px;
+	}
+	.clay-range-track {
+		height: 2px;
+		background: $black-20-color;
+	} 
+}
+}
+ 

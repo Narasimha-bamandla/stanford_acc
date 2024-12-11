@@ -1,0 +1,5 @@
+Bundle-Name: cl-cr-react-web
+Bundle-SymbolicName: edu.stanford.cl.cr.react.web
+Bundle-Version: 1.0.0
+Export-Package: edu.stanford.cl.cr.react.web.constants
+Web-ContextPath: /cl-cr-react-web

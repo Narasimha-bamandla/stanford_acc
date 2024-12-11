@@ -1,0 +1,139 @@
+// Define your color variables
+@import "colors";
+
+@mixin style() {
+  display: flex;
+  padding: 5px 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  align-items: center;
+  color: $black-100-color ;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 12px;
+  min-width: 25px;
+  flex: auto;
+}
+
+@mixin size-style() {
+  width: 12px;
+  height: 12px;
+}
+
+@mixin star-style() {
+  display: flex;
+  gap: 6px;
+  justify-content: flex-start;
+  align-items: center;
+  color: $black-100-color;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 14px;
+  cursor: pointer;
+
+  &:hover {
+    color: $primary-maroon;
+    text-decoration-line: underline;
+  }
+
+}
+
+.sdfd-ratingbar {
+  display: flex;
+  width: 750px;
+  max-width: 100%;
+  overflow: hidden;
+  min-height: 22px;
+  margin: 0;
+  padding: 0;
+  & .star1 {
+    @include style();
+    background-color: $star1-color;
+    color: $white;
+  }
+
+  & .star2 {
+    @include style();
+    background-color: $star2-color;
+  }
+
+  & .star3 {
+    @include style();
+    background-color: $star3-color;
+  }
+
+  & .star4 {
+    @include style();
+    background-color: $star4-color;
+  }
+
+  & .star5 {
+    @include style();
+    background-color: $star5-color;
+  }
+  & .empty {
+    @include style();
+    background-color: $white;
+  }
+  &.bdr {
+    border:1px solid $black-20-color;
+  }
+}
+
+.sdfd-stars {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  align-self: stretch;
+
+  & .star1 {
+    @include star-style();
+
+    .color {
+      @include size-style();
+      background-color: $star1-color;
+      color: $white;
+    }
+
+  }
+
+  & .star2 {
+    @include star-style();
+
+    .color {
+      @include size-style();
+      background-color: $star2-color;
+    }
+  }
+
+  & .star3 {
+    @include star-style();
+
+    .color {
+      @include size-style();
+      background-color: $star3-color;
+    }
+  }
+
+  & .star4 {
+    @include star-style();
+
+    .color {
+      @include size-style();
+      background-color: $star4-color;
+    }
+  }
+
+  & .star5 {
+    @include star-style();
+
+    .color {
+      @include size-style();
+      background-color: $star5-color;
+    }
+  }
+}

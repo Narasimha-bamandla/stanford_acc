@@ -1,0 +1,20 @@
+@import 'colors'; 
+
+
+.help-links { 
+    display: flex;
+    width: 100%; 
+    
+    flex-direction: column;
+    gap:24px;
+   .col-left {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    width: 950px;
+    max-width: 100%;
+   }
+   .col-left {
+   flex:1,
+   }
+}

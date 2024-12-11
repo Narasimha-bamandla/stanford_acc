@@ -1,0 +1,46 @@
+.cr_home_announcements {
+  position: sticky;
+  top:140px;
+  .content-head {
+    border-bottom: 1px solid $black-20-color;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+    h2 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .new_flag {
+      padding: 3px 6px;
+      color: $green-50-color;
+      background-color: $green-10-color;
+      border-radius: 2px;
+      margin-left: 5px;
+    }
+    p {
+      margin-bottom: 0;
+    }
+  }
+  .content-body {
+    .body2 {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+    }
+    p:last-child {
+      margin-bottom: 0;
+    }
+    p + ul {
+      margin-top: -5px;
+      margin-left: -10px;
+    }
+    a {
+      text-decoration: underline;
+    }
+  }
+  .content-body + .content-body {
+    border-top: 1px solid $black-20-color;
+    padding-top:20px;
+    margin-top: 20px;
+  }
+}

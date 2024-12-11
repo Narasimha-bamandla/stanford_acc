@@ -1,0 +1,71 @@
+@import 'colors';
+
+.link_link_cards { 
+    display: flex;
+    align-items: flex-start;
+    gap: 40px; 
+    .link_card {
+        display: flex;
+        padding: 20px 24px;
+        flex-direction: column; 
+        gap: 12px;
+        flex: 1 0 0; 
+        border: 1px solid $black-20-color;
+        cursor: pointer; 
+        box-sizing: border-box;
+        max-width: 400px; 
+        @media (min-width:1920px) {
+            min-width: 400px;
+        } 
+        .link_card-icon {
+            width: 32px;
+            height: 32px;
+        }
+
+        .link_card-title {
+            color: $primary-balck; 
+            padding-bottom: 24px;
+            margin-bottom: 12px;
+            border-bottom: 1px solid $black-20-color;
+        }
+      
+        .link_card-links {
+            display: flex;
+            gap:10px; 
+            flex-direction: column;
+            a {
+                color: $black-100-color; 
+                text-decoration: none;
+                &:hover {
+                    color: $primary-maroon;
+                    text-decoration: underline; 
+                }
+            }
+        }
+        .link_card-footer {
+            margin-top: 24px;
+            padding-top:8px;
+            border-top: 1px solid $black-20-color;
+           a {
+                display: inline-block;
+                padding-right:24px;
+                color: $black-100-color; 
+                text-decoration: none; 
+                font-weight: 600;
+                background: url('/o/stanford-clce-theme/images/icons/right-arrow-icon.svg') no-repeat right center;  
+                &:hover {
+                    color: $primary-maroon;
+                    text-decoration: underline; 
+                }
+            }
+        }
+        svg {
+            color:$black-100-color;
+        }
+        &:hover {
+            background: $bg-grey;
+            border-color: $bg-grey;
+            color:$primary-maroon; 
+        }
+    }
+}

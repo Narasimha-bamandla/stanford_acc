@@ -1,0 +1,80 @@
+/* Search Box */
+
+.search-box {
+    display: flex;
+    border: 1px solid $black-20-color;
+    width: 100%;
+    flex: 1;
+    margin: 15px 0;
+    .search-label {
+        position: absolute;
+        height: 0;
+        overflow: hidden;
+    }
+    .nice-select {
+        min-width: 96px;
+    }
+    .DropdownList {
+    position: relative;
+    }
+
+    .DropdownList.SelectList .dropdown-menu.show {
+    min-width: 96px;
+    }
+
+    button.dropdown-toggle.btn {
+    min-width: 96px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    border-right: 1px solid $black-20-color;
+    }
+
+    .dropdown-menu .dropdown-item {
+    border-top: none;
+    }
+
+    .dropdown {
+    border: none;
+    }
+
+    .search-input {
+    display: flex;
+    gap: 0; 
+    font-size: 14px;
+    flex: 1;
+    input { 
+        border: none;
+        padding: 10px 0px 10px 15px; 
+        flex: 1; 
+    }
+
+    button {
+        border-radius: 0 !important; 
+        width: 50px !important;
+        &:disabled {
+            cursor: pointer;
+        }
+    }
+
+    .btn {
+        padding: 0;
+        display: flex;
+
+        img {
+        width: 12px;
+        height: 12px;
+        }
+    }
+
+    }
+    #results-hidden-container {
+        position: absolute;
+        font-size: 0;
+        color: transparent;
+    }
+}
+
+ 
+   

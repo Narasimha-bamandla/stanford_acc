@@ -1,0 +1,50 @@
+@import "colors";
+
+.tooltip {
+  max-width: fit-content; 
+  &.clay-tooltip-left .arrow:before {
+    border-left-color: $black-20-color;
+  }
+  &.clay-tooltip-right .arrow:before {
+    border-right-color: $black-20-color;
+  }
+  &.clay-tooltip-top .arrow:before {
+    border-top-color: $black-20-color;
+  }
+  &.clay-tooltip-bottom .arrow:before {
+    border-bottom-color: $black-20-color;
+  }
+  &.show {
+    opacity: 1;
+  }
+  .tooltip-inner {
+    padding: 4px 12px;
+    color: $black-80-color !important;
+    text-align: left;
+    background-color: $bg-grey !important;
+    border-radius: 0 !important;
+    border: 1px solid $black-20-color !important;
+    max-width: 230px;
+  }
+}
+
+.custom-tooltip {
+  position: absolute;
+  top: -20px;
+  left: 15px;
+  padding: 1px 5px;
+  border-radius: 0;
+  white-space: nowrap;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 10;
+}
+
+.tooltip-new .custom-tooltip {
+  background-color: $white;
+  color: $black-80-color;
+  border: 1px solid $black-20-color !important;
+  font-size: 14px;
+  font-weight: 400;
+}

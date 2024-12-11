@@ -1,0 +1,464 @@
+@import "colors";
+
+html {
+  scroll-behavior: smooth;
+}
+.primary {
+  color: $primary-maroon;
+}
+
+.black {
+  color: $primary-balck;
+}
+
+.secondary {
+  color: $secondary-color;
+}
+
+.c20 {
+  color: $black-20-color;
+}
+
+.bg20 {
+  background-color: $black-20-color;
+}
+
+.c60 {
+  color: $black-60-color;
+}
+
+.bg60 {
+  background-color: $black-60-color;
+}
+
+.c80 {
+  color: $black-80-color;
+}
+
+.bg80 {
+  background-color: $black-80-color;
+}
+
+.c100 {
+  color: $black-100-color;
+}
+
+.bg100 {
+  background-color: $black-100-color;
+}
+
+.enrolled-bg-color {
+  background-color: $enrolled-color;
+}
+.conflict-bg-color {
+  background-color: $conflict-color;
+}
+.planned-bg-color {
+  background-color: $planned-color;
+}
+.preferences-bg-color {
+  background-color: $preferences-color;
+}
+
+.coreArea1-bg-color {
+  background-color: $coreArea1-color;
+}
+.coreArea2-bg-color {
+  background-color: $coreArea2-color;
+}
+.coreArea3-bg-color {
+  background-color: $coreArea3-color;
+}
+.coreArea4-bg-color {
+  background-color: $coreArea4-color;
+}
+.coreArea5-bg-color {
+  background-color: $coreArea5-color;
+}
+.coreArea6-bg-color {
+  background-color: $coreArea6-color;
+}
+.coreArea7-bg-color {
+  background-color: $coreArea7-color;
+}
+.coreArea8-bg-color {
+  background-color: $coreArea8-color;
+}
+.coreArea9-bg-color {
+  background-color: $coreArea9-color;
+}
+.coreArea10-bg-color {
+  background-color: $coreArea10-color;
+}
+.coreArea11-bg-color {
+  background-color: $coreArea11-color;
+}
+.coreArea12-bg-color {
+  background-color: $coreArea12-color;
+}
+.coreArea13-bg-color {
+  background-color: $coreArea13-color;
+}
+.coreArea14-bg-color {
+  background-color: $coreArea14-color;
+}
+
+.enrolled-color {
+  color: $enrolled-color;
+}
+.conflict-color {
+  color: $conflict-color;
+}
+.planned-color {
+  color: $planned-color;
+}
+.preferences-color {
+  color: $preferences-color;
+}
+
+.coreArea1-color {
+  color: $coreArea1-color;
+}
+.coreArea2-color {
+  color: $coreArea2-color;
+}
+.coreArea3-color {
+  color: $coreArea3-color;
+}
+.coreArea4-color {
+  color: $coreArea4-color;
+}
+.coreArea5-color {
+  color: $coreArea5-color;
+}
+.coreArea6-color {
+  color: $coreArea6-color;
+}
+.coreArea7-color {
+  color: $coreArea7-color;
+}
+.coreArea8-color {
+  color: $coreArea8-color;
+}
+.coreArea9-color {
+  color: $coreArea9-color;
+}
+.coreArea10-color {
+  color: $coreArea10-color;
+}
+.coreArea11-color {
+  color: $coreArea11-color;
+}
+.coreArea12-color {
+  color: $coreArea12-color;
+}
+.coreArea13-color {
+  color: $coreArea13-color;
+}
+.coreArea14-color {
+  color: $coreArea14-color;
+}
+
+@mixin font-style($color, $size, $weight, $lineheight) {
+  font-family: "Source Sans Pro", "SourceSansPro-Regular";
+  color: $color;
+  font-size: $size;
+  font-style: normal;
+  font-weight: $weight;
+  line-height: $lineheight;
+  @if $weight == 600 {
+  } @else {
+    & strong {
+      font-weight: 600 !important;
+    }
+  }
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  margin: 0 ;
+  font-family: "Source Sans Pro", "SourceSansPro-Regular";
+}
+/* Page Title */
+.page-title {
+  @include font-style(
+    $black-100-color,
+    48px ,
+    600 ,
+    57px 
+  );
+}
+ 
+
+/* Heading/Heading 01 */
+
+.h1,
+h1 {
+  @include font-style(
+    $black-100-color,
+    36px ,
+    600  ,
+    40px
+  );
+}
+
+/* Heading/Heading 02 */
+
+.h2,
+h2 {
+  @include font-style(
+    $black-100-color,
+    28px,
+    600,
+    32px
+  );
+}
+
+/* Heading/Heading 03 */
+
+.h3,
+h3 {
+  @include font-style(
+    $black-100-color,
+    24px,
+    600,
+    28px
+  );
+}
+
+/* Heading/Heading 04 */
+
+.h4,
+h4 {
+  @include font-style(
+    $black-100-color,
+    20px,
+    600,
+    24px
+  );
+}
+
+/* Heading/Heading 05 */
+
+.h5,
+h5 {
+  @include font-style(
+    $black-100-color,
+    18px,
+    600,
+    24px
+  );
+}
+/*  body 1 */
+.body1 {
+  @include font-style($primary-balck, 18px, 400, 24px);
+}
+
+.body1b {
+  @include font-style($primary-balck, 18px, 600, 24px);
+}
+/*  body 2 */
+.body2 {
+  @include font-style($primary-balck, 16px, 400, 24px);
+}
+
+.body2b {
+  @include font-style($primary-balck, 16px, 600, 24px);
+}
+
+/* Body/Body 3 */
+body {
+  @include font-style($black-100-color, 14px, 400, 16px);
+}
+
+/* small,  body 3 */
+.small,
+.body3 {
+  @include font-style($black-80-color, 12px, 400, 16px);
+}
+.body3b {
+  @include font-style($black-80-color, 12px, 600, 16px);
+}
+
+/*  body 4 */
+.body4 {
+  @include font-style($black-80-color, 11px, 400, 12px);
+}
+.body4b {
+  @include font-style($black-80-color, 11px, 600, 12px);
+}
+/*  body 5*/
+.body5 {
+  @include font-style($black-60-color, 10px, 400, 12px);
+}
+.body5b {
+  @include font-style($black-60-color, 10px, 600, 12px);
+}
+/*  body 6*/
+.body6 {
+  @include font-style($black-80-color, 9px, 400, 12px);
+}
+.body6b {
+  @include font-style($black-80-color, 9px, 600, 12px);
+}
+
+.font12 {
+  @include font-style($black-80-color, 12px, 400, 16px);
+}
+.font12b {
+  @include font-style($black-80-color, 12px, 600, 16px);
+}
+.font16 {
+  @include font-style($black-80-color, 16px, 400, 24px);
+}
+.font16b {
+  @include font-style($black-80-color, 16px, 600, 24px);
+}
+.font18 {
+  @include font-style($black-100-color, 18px, 400, 120%);
+}
+.font18b {
+  @include font-style($black-100-color, 18px, 600, 120%);
+}
+/* achor link */
+a {
+  color: $primary-maroon; 
+}
+a.grey-link {
+  color: $black-100-color;
+  text-decoration-line: underline;
+}
+.grey-link-text {
+  color: $black-80-color; 
+ a {
+    color: $black-80-color;
+    text-decoration-line: underline;
+  } 
+}
+/* Horizontal Line */
+hr {
+  stroke-width: 1px;
+  stroke: $black-20-color;
+}
+/* Tag */
+.tag {
+  & * {
+    color: $primary-maroon;
+    margin: 0;
+  }
+  cursor: pointer;
+  background: $tag;
+  display: inline-flex;
+  padding: 8px 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  &.sm {
+    padding: 3px 6px;
+    font-size: 12px;
+    line-height: normal;
+    vertical-align: middle;
+  }
+  &.fullwidth {
+    display: flex;
+  }
+}
+
+/* Timeline */
+
+.timeline {
+  margin: auto;
+  padding-left: 0;
+  text-align: left;
+
+  &.minHt60 {
+    .timeline-item {
+      min-height: 60px;
+    }
+  }
+
+  .timeline-item {
+    padding-top: 0;
+    padding-bottom: 0;
+
+    .timeline-icon {
+      background: $tag;
+      border: 1px solid $tag;
+    }
+
+    .panel {
+      .timeline-increment {
+        top: 2px;
+        transform: translate(-50%);
+      }
+    }
+
+    &:before {
+      bottom: -3px;
+      top: 2px;
+      background-color: $tag;
+    }
+
+    &:last-child {
+      &:before {
+        display: none;
+      }
+    }
+  }
+}
+
+/* Star */
+
+.stars {
+  display: flex;
+  align-items: flex-start;
+  gap: 3px !important;
+  .star {
+    width: 12px;
+    height: 12px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("/o/stanford-clce-theme/images/icons/star_inactive_icon.svg");
+    &.full:before,
+    &.half:before {
+      position: absolute;
+      content: "";
+      background-image: url("/o/stanford-clce-theme/images/icons/star_active_icon.svg");
+      height: 12px;
+    }
+    &.full:before {
+      width: 12px;
+    }
+    &.half:before {
+      width: 6px;
+    }
+  }
+}
+/* Layout max width reset */
+.container-fluid-max-xl {
+  max-width: inherit;
+}
+.btn:focus {
+  outline: 0 !important;
+  box-shadow: none;
+} 
+.btn:focus-visible {
+  outline: 2px solid !important;
+}
+
+/* hidden text */
+.visuallyHidden {
+  position: absolute;
+  visibility: hidden;
+  left:-10000px;
+}

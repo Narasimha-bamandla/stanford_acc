@@ -1,0 +1,63 @@
+.cr_home_personal_allocation_results { 
+  .content-head {
+    margin-bottom:10px;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $black-20-color;
+    .pagination {
+      margin: 0;
+      ul {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+      }
+      .nav-link {
+        padding: 0;
+        color: $black-color-2;
+        svg {
+          color: $black-color-2;
+        }
+        button {
+          padding: 10px;
+        }
+      }
+      .nav-link.disabled {
+        svg {
+          color: $disabled-color;
+        }
+      }
+    }
+  } 
+  .content-body {
+    .event_title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width:100%;
+      @include font-style(
+        $black-100-color,
+        20px,
+        600,
+        24px
+      );
+    }
+    &.hidden {
+      display: none;
+    }
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+    .date_month {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

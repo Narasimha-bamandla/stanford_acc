@@ -1,0 +1,63 @@
+@import "colors";
+
+.howto-details {
+  display: flex;
+  gap: 40px;
+  .content-area {
+    position: relative;
+    padding: 0;
+    p {
+      line-height: 24px;
+    }
+  }
+  .col-middle {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 100%;
+  }
+
+  .col-left {
+    flex: 1;
+    ul.nav-tabs {
+      position: sticky;
+      top: 100px;
+    }
+  }
+  .col-right {
+    min-width: 210px;
+  }
+
+  .howto_quick_links {
+    list-style: none;
+    position: sticky;
+    top: 100px;
+    .achor-tabs a {
+      text-align: left;
+    }
+    .nav-item {
+      .nav-link {
+        display: flex;
+        padding: 6px 8px;
+        align-items: flex-start;
+        gap: 8px;
+        align-self: stretch;
+        width: 100%;
+        text-align: left;
+        background: none;
+        border: none;
+      }
+    } 
+  }
+   a.btn-edit {
+    position: absolute;
+    right: 0;
+    text-decoration: none;
+}
+ 
+}
+
+.has-control-menu .howto-details ul.nav-tabs,
+.has-control-menu .howto-details .howto_quick_links {
+  top: 140px;
+}

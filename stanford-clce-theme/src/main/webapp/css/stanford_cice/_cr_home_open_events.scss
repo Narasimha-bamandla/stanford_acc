@@ -1,0 +1,136 @@
+.cr_home_open_events {
+  margin-bottom: 20px;
+  .content-head {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    h2 {
+      border-bottom: 1px solid $black-20-color;
+      padding-bottom: 10px;
+      margin-bottom: -10px;
+    }
+  }
+
+  .content-body {
+    &.hidden {
+      display: none;
+    }
+    .date_month {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+    .event {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 10px;
+      padding-top: 10px;
+      width: 100%;
+      position: relative;
+
+      &:before {
+        border-top: 1px solid $black-20-color;
+        position: absolute;
+        content: "";
+        width: 40%;
+        top: 0;
+      }
+
+      &.ongo:before {
+        width: 100%;
+      }
+      &:first-child {
+        border: none;
+        margin: 0;
+        padding-top: 0;
+        &:before {
+          display: none;
+        }
+      }
+      .event_title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width:100%;
+        @include font-style(
+          $black-100-color,
+          20px,
+          600,
+          24px
+        );
+      }
+      &.open_event {
+        .event_head {
+          flex-direction: column-reverse;
+         } 
+      }
+    }
+
+    .event_head {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
+      .event_ongo_title { 
+        @include font-style(
+          $black-100-color,
+          28px,
+          600,
+          32px
+        );
+      }
+      .event_tdt {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 10px;
+      }
+      .date_time {
+        border-left: 1px solid $blue-100-color;
+        padding-left: 10px;
+        .text,
+        .time {
+          color: $dark-grey-4;
+        }
+        .date {
+          @include font-style(
+            $black-100-color,
+            28px,
+            600,
+            32px
+          );
+        }
+      }
+    }
+    .event_head + .event.ongo:before {
+      display: none;
+    }
+    .event_head + .event.ongo:before {
+      padding-top: 0;
+    }
+    .double-line {
+      border-top: 1px solid $black-20-color;
+      border-bottom: 1px solid $black-20-color;
+      margin-top: 10px; 
+      width: 100%;
+      height: 10px;
+    }
+    .double-line + .event:before {
+      display: none;
+    }
+    .btn-group {
+      gap: 10px;
+    }
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

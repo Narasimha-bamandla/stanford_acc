@@ -1,0 +1,122 @@
+// Define your color variables
+@import "colors";
+
+// Define the button styles as mixins
+ 
+
+@mixin event-style() {
+  display: flex;
+  width: 67px;
+  max-width: 100%;
+  height: 40px;
+  padding: 6px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-radius: 2px; 
+  overflow: hidden;
+  position: relative;
+  border: 1.5px solid  $white;  
+  cursor: pointer;
+  & .text {
+    color: $black-100-color;
+    text-overflow: ellipsis; 
+    font-size: 9px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 12px;  
+  }
+  } 
+// Apply the styles with different sizes, states, types, and icon positions
+.sdfd-vcevent {
+  @include event-style();    
+    &:hover {
+      border: 1.5px solid  $secondary-color;
+      box-shadow: 0px 8px 40px 0px rgba(0, 0, 0, 0.20), 0px 0px 10px 0px rgba(0, 40, 68, 0.40);
+    } 
+    .icon {
+      position: absolute;
+      right: 5px;
+      bottom: 5px;
+    }
+
+    &.enrolled {
+      background-color: $enrolled-color;
+    }  
+    &.conflict
+      {
+      background-color: $conflict-color;
+      .text {
+        color:$white;
+      }
+      color:$white;
+    } 
+    &.planned  {
+      background-color: $planned-color;
+    }
+    &.preferences  {
+      background-color: $preferences-color; 
+      .text {
+        color:$white;
+      }
+      color:$white;
+    }
+    
+    &.coreArea1
+      {
+      background-color: $coreArea1-color;
+    }
+    &.coreArea2
+      {
+      background-color: $coreArea2-color;
+    }
+    &.coreArea3
+      {
+      background-color: $coreArea3-color;
+    }
+    &.coreArea4
+     {
+      background-color: $coreArea4-color;
+    }
+    &.coreArea5
+      {
+      background-color: $coreArea5-color;
+    }
+    &.coreArea6
+     {
+      background-color: $coreArea6-color;
+    }
+    &.coreArea7
+      {
+      background-color: $coreArea7-color;
+    }
+    &.coreArea8
+     {
+      background-color: $coreArea8-color;
+    }
+    &.coreArea9
+      {
+      background-color: $coreArea9-color;
+    }
+    &.coreArea10
+      {
+      background-color: $coreArea10-color;
+    }
+    &.coreArea11
+      {
+      background-color: $coreArea11-color;
+    }
+    &.coreArea12
+      {
+      background-color: $coreArea12-color;
+    }
+    &.coreArea13
+      {
+      background-color: $coreArea13-color;
+    }
+    &.coreArea14
+      {
+      background-color: $coreArea14-color;
+    } 
+}

@@ -1,0 +1,134 @@
+@import 'colors';
+
+.course_sections {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 24px;
+    & .course_sections-tabs {
+        gap: 0 !important;
+        align-items: stretch;
+        & .nav-item {
+           
+            margin-right: -5px;
+            height: auto;
+            &.active { 
+                z-index: 1;
+                & .nav-link {  
+                       border-color: $primary-maroon  !important;
+                background: $white !important;
+              span { color: $primary-maroon   !important; }  
+                }
+        } 
+        & .nav-link {
+            
+            background: $white !important;
+            display: flex;
+            flex-direction: column;
+            min-width: 100px;
+            height: auto;
+            padding: 8px 12px 8px 16px !important;
+            & .section {
+                min-height: 24px;
+                gap: 2px;
+                display: flex;
+                align-items: center;
+            }
+      
+        }
+        }  
+    }
+    .course_sections-data {
+        background: $bg-grey;
+        display: flex;
+        width: 950px;
+        padding: 20px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        .head {
+            display: flex;
+            padding: 0 0 20px;
+            justify-content: space-between;
+            align-items: center;
+            align-self: stretch; 
+            border-bottom:1px solid $black-20-color;
+        }
+        .left-col {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .content {
+            display: flex;
+            gap:20px;
+        }
+        .columns {
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+            flex: 1 0 0;
+            flex-direction: column; 
+            &:first-child {
+                border-right:1px solid $black-20-color;
+            }
+        } 
+        .data {
+            flex: 1 1;
+            display: flex; 
+            align-items: flex-start;
+            gap: 8px;
+            align-self: stretch; 
+            color:$black-100-color; 
+            font-size: 18px;
+            font-weight: 400; 
+            font-style: normal; 
+            line-height: 24px;  
+            flex: 1 1; 
+            flex-wrap: wrap;
+            gap: 20px;
+            a {
+                color:$black-100-color;  
+                font-weight: 600; 
+            }
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-wrap: wrap;
+                row-gap: 12px;
+                
+                li {
+                    width:50%;
+                    min-height: 24px;
+                }
+            }
+        }
+        .external_link {
+            font-size: 18px;
+            line-height: 24px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex; 
+            padding-right: 25px;
+            background: url('/o/stanford-clce-theme/images/icons/outside_link_icon.svg') no-repeat right center;
+        }
+        .day-week-time {
+            display: flex;
+            gap: 10px; 
+        }
+        .day-week-time, .limit { 
+            font-size: 18px;
+            line-height: 24px;
+            font-weight: 400;
+        }
+        .week {
+            padding: 0 10px;
+            border-left:1px solid $black-20-color;
+            border-right:1px solid $black-20-color;
+        }
+
+      
+    }
+}

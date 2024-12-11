@@ -1,0 +1,14 @@
+.my-notes-list {
+    width: 300px;
+    border: 1px solid #D5D5D4;
+    background-color: #fff;
+    position: absolute;
+    right: 0;
+    display: flex;
+    top: 20px;
+    flex-direction: column;
+    gap: 10px; 
+    .note {
+        border-top: 1px solid #D5D5D4;
+    }
+}

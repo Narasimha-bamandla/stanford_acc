@@ -1,0 +1,468 @@
+@import 'components/breadcrumb';
+@import 'components/color';
+@import 'components/commerce/index';
+@import 'components/group-item';
+@import 'components/info-panel';
+@import 'components/navbars';
+@import 'components/sidebar';
+@import 'components/table';
+@import 'components/widget';
+@import 'portlet/portlet';
+@import 'portlet/portlet_decorators';
+
+@import 'custom_properties/custom_properties_set';
+/* These inject tags are used for dynamically creating imports for themelet styles, you can place them where ever you like in this file. */
+
+/* inject:imports */
+
+/*
+@import 'liferay-font-awesome/scss/font-awesome';
+@import 'liferay-font-awesome/scss/glyphicons';
+*/
+
+/* endinject */
+
+/* This file allows you to override default styles in one central location for easier upgrade and maintenance. */
+
+/**** Colors ****/
+:root {
+  --accent-archway: #5d4b3c;
+  --accent-archway-dark: #2f2424;
+  --accent-archway-light: #766253;
+  --accent-fog: #dad7cb;
+  --accent-fog-dark: #b6b1a9;
+  --accent-fog-light: #f4f4f4;
+  --accent-illuminating: #fedd5c;
+  --accent-illuminating-dark: #fec51d;
+  --accent-illuminating-light: #ffe781;
+  --accent-poppy: #e98300;
+  --accent-poppy-dark: #d1660f;
+  --accent-poppy-light: #f9a44a;
+  --accent-spirited: #e04f39;
+  --accent-spirited-dark: #c74632;
+  --accent-spirited-light: #f4795b;
+  --accent-stone: #7f7776;
+  --accent-stone-dark: #544948;
+  --accent-stone-light: #d4d1d1;
+  --border-stroke: rgba(84, 73, 72, 0.2);
+  --interactive-digital-blue: #006cb8;
+  --interactive-digital-blue-dark: #00548f;
+  --interactive-digital-blue-light: #85ccff;
+  --interactive-digital-green: #008566;
+  --interactive-digital-green-dark: #006f54;
+  --interactive-digital-green-light: #1aecba;
+  --interactive-digital-red: #b1040e;
+  --interactive-digital-red-dark: #820000;
+  --interactive-digital-red-light: #e50808;
+  --neutrals-black: #2e2d29;
+  --neutrals-black-10: #eaeaea;
+  --neutrals-black-20: #d5d5d4;
+  --neutrals-black-30: #c0c0bf;
+  --neutrals-black-40: #ababa9;
+  --neutrals-black-50: #979694;
+  --neutrals-black-60: #767674;
+  --neutrals-black-70: #6d6c69;
+  --neutrals-black-80: #585754;
+  --neutrals-black-90: #43423e;
+  --neutrals-white: #ffffff;
+  --primary-cardinal: #8c1515;
+  --primary-cardinal-light: #b83a4b;
+  --primary-dark-cardinal: #820000;
+}
+
+/* close :root */
+
+/**** Fonts ****/
+:root {
+  /** body-text-link-style **/
+  --body-text-style-font-family: "Source Sans Pro", "SourceSansPro-Regular";
+  --body-text-semi-style-font-family: "Source Sans Pro",
+    "SourceSansPro-SemiBold";
+  --body-text-bold-style-font-family: "Source Sans Pro", "SourceSansPro-Bold";
+
+  --body-text-link-style-font-family: "Source Sans Pro", "SourceSansPro-Regular";
+  --body-text-link-style-font-size: 16px;
+  --body-text-link-style-letter-spacing: 0px;
+  --body-text-link-style-line-height: 150%;
+  --body-text-link-style-font-weight: 400;
+  --body-text-link-style-text-decoration: underline;
+  --body-text-link-style-color: black;
+  /** bodytext-03 **/
+  --bodytext-03-font-family: "Source Sans Pro", "SourceSansPro-Regular";
+  --bodytext-03-font-size: 14px;
+  --bodytext-03-letter-spacing: 0px;
+  --bodytext-03-line-height: 120%;
+  --bodytext-03-font-weight: 400;
+  --bodytext-03-color: black;
+  /** bodytext-01 **/
+  --bodytext-01-font-family: "Source Sans Pro", "SourceSansPro-Regular";
+  --bodytext-01-font-size: 18px;
+  --bodytext-01-letter-spacing: 0px;
+  --bodytext-01-line-height: 130%;
+  --bodytext-01-font-weight: 400;
+  --bodytext-01-color: black;
+  /** bodytext-02 **/
+  --bodytext-02-font-family: "Source Sans Pro", "SourceSansPro-Regular";
+  --bodytext-02-font-size: 16px;
+  --bodytext-02-letter-spacing: 0px;
+  --bodytext-02-line-height: 150%;
+  --bodytext-02-font-weight: 400;
+  --bodytext-02-color: black;
+  /** cta-button **/
+  --cta-button-font-family: "Source Sans Pro", "SourceSansPro-SemiBold";
+  --cta-button-font-size: 20px;
+  --cta-button-letter-spacing: 0px;
+  --cta-button-line-height: 120%;
+  --cta-button-font-weight: 600;
+  --cta-button-color: black;
+  /** cta-link **/
+  --cta-link-font-family: "Source Sans Pro", "SourceSansPro-Bold";
+  --cta-link-font-size: 16px;
+  --cta-link-letter-spacing: 0px;
+  --cta-link-line-height: 120%;
+  --cta-link-font-weight: 700;
+  --cta-link-color: black;
+  /** date **/
+  --date-font-family: "Source Sans Pro", "SourceSansPro-SemiBold";
+  --date-font-size: 16px;
+  --date-letter-spacing: 1.6px;
+  --date-line-height: 120%;
+  --date-font-weight: 600;
+  --date-color: black;
+  /** date-style **/
+  --date-style-font-family: "Source Sans Pro", "SourceSansPro-Bold";
+  --date-style-font-size: 72px;
+  --date-style-letter-spacing: 0px;
+  --date-style-line-height: 100%;
+  --date-style-font-weight: 700;
+  --date-style-color: black;
+  /** date-title **/
+  --date-title-font-family: "Source Sans Pro", "SourceSansPro-Bold";
+  --date-title-font-size: 48px;
+  --date-title-letter-spacing: 0px;
+  --date-title-line-height: 100%;
+  --date-title-font-weight: 700;
+  --date-title-color: black;
+  /** heading-01 **/
+  --heading-01-font-family: "Source Sans Pro", "SourceSansPro-Bold";
+  --heading-01-font-size: 36px;
+  --heading-01-letter-spacing: 0px;
+  --heading-01-line-height: 120%;
+  --heading-01-font-weight: 700;
+  --heading-01-color: black;
+  /** heading-02 **/
+  --heading-02-font-family: "Source Sans Pro", "SourceSansPro-SemiBold";
+  --heading-02-font-size: 28px;
+  --heading-02-letter-spacing: 0px;
+  --heading-02-line-height: 120%;
+  --heading-02-font-weight: 600;
+  --heading-02-color: black;
+  /** heading-03 **/
+  --heading-03-font-family: "Source Sans Pro", "SourceSansPro-SemiBold";
+  --heading-03-font-size: 24px;
+  --heading-03-letter-spacing: 0px;
+  --heading-03-line-height: 120%;
+  --heading-03-font-weight: 600;
+  --heading-03-color: black;
+  /** heading-04 **/
+  --heading-04-font-family: "Source Sans Pro", "SourceSansPro-SemiBold";
+  --heading-04-font-size: 20px;
+  --heading-04-letter-spacing: 0px;
+  --heading-04-line-height: 120%;
+  --heading-04-font-weight: 600;
+  --heading-04-color: black;
+  /** heading-05 **/
+  --heading-05-font-family: "Source Sans Pro", "SourceSansPro-SemiBold";
+  --heading-05-font-size: 14px;
+  --heading-05-letter-spacing: 0px;
+  --heading-05-line-height: 120%;
+  --heading-05-font-weight: 600;
+  --heading-05-color: black;
+  /** heading-06 **/
+  --heading-06-font-family: "Source Sans Pro", "SourceSansPro-SemiBold";
+  --heading-06-font-size: 24px;
+  --heading-06-letter-spacing: 0px;
+  --heading-06-line-height: 120%;
+  --heading-06-font-weight: 600;
+  --heading-06-text-decoration: underline;
+  --heading-06-color: black;
+  /** heading-07 **/
+  --heading-07-font-family: "Source Sans Pro", "SourceSansPro-SemiBold";
+  --heading-07-font-size: 20px;
+  --heading-07-letter-spacing: 0px;
+  --heading-07-line-height: 120%;
+  --heading-07-font-weight: 600;
+  --heading-07-text-decoration: underline;
+  --heading-07-color: black;
+  /** heading-08 **/
+  --heading-08-font-family: "Source Sans Pro", "SourceSansPro-SemiBold";
+  --heading-08-font-size: 16px;
+  --heading-08-letter-spacing: 0px;
+  --heading-08-line-height: 120%;
+  --heading-08-font-weight: 600;
+  --heading-08-color: black;
+  /** label **/
+  --label-font-family: "Source Sans Pro", "SourceSansPro-SemiBold";
+  --label-font-size: 14px;
+  --label-letter-spacing: 0.7px;
+  --label-line-height: 100%;
+  --label-font-weight: 600;
+  --label-text-transform: uppercase;
+  --label-color: black;
+  /** link-text **/
+  --link-text-font-family: "Source Sans Pro", "SourceSansPro-Regular";
+  --link-text-font-size: 16px;
+  --link-text-letter-spacing: 0px;
+  --link-text-line-height: 160%;
+  --link-text-font-weight: 400;
+  --link-text-color: black;
+  /** link-text-line **/
+  --link-text-line-font-family: "Source Sans Pro", "SourceSansPro-Regular";
+  --link-text-line-font-size: 16px;
+  --link-text-line-letter-spacing: 0px;
+  --link-text-line-line-height: 160%;
+  --link-text-line-font-weight: 400;
+  --link-text-line-text-decoration: underline;
+  --link-text-line-color: black;
+  /** link-text-line-hover **/
+  --link-text-line-hover-font-family: "Source Sans Pro", "SourceSansPro-Regular";
+  --link-text-line-hover-font-size: 16px;
+  --link-text-line-hover-letter-spacing: 0px;
+  --link-text-line-hover-line-height: 160%;
+  --link-text-line-hover-font-weight: 400;
+  --link-text-line-hover-text-decoration: underline;
+  --link-text-line-hover-color: black;
+  /** sub-heading-02 **/
+  --sub-heading-02-font-family: "Source Sans Pro", "SourceSansPro-Regular";
+  --sub-heading-02-font-size: 22px;
+  --sub-heading-02-letter-spacing: 0px;
+  --sub-heading-02-line-height: 120%;
+  --sub-heading-02-font-weight: 400;
+  --sub-heading-02-color: black;
+  /** sub-text-04 **/
+  --sub-text-04-font-family: "Source Sans Pro", "SourceSansPro-SemiBold";
+  --sub-text-04-font-size: 14px;
+  --sub-text-04-letter-spacing: 0px;
+  --sub-text-04-line-height: 120%;
+  --sub-text-04-font-weight: 600;
+  --sub-text-04-color: black;
+  /** sub-text **/
+  --sub-text-font-family: "Source Sans Pro", "SourceSansPro-SemiBold";
+  --sub-text-font-size: 16px;
+  --sub-text-letter-spacing: 0.6px;
+  --sub-text-line-height: 120%;
+  --sub-text-font-weight: 600;
+  --sub-text-color: black;
+  /** subheadline-03 **/
+  --subheadline-03-font-family: "Source Sans Pro", "SourceSansPro-SemiBold";
+  --subheadline-03-font-size: 18px;
+  --subheadline-03-letter-spacing: 0px;
+  --subheadline-03-line-height: 120%;
+  --subheadline-03-font-weight: 600;
+  --subheadline-03-color: black;
+  /** title **/
+  --title-font-family: "Source Sans Pro", "SourceSansPro-SemiBold";
+  --title-font-size: 40px;
+  --title-letter-spacing: 0px;
+  --title-line-height: 150%;
+  --title-font-weight: 600;
+  --title-color: black;
+  /** title-02 **/
+  --title-02-font-family: "Source Sans Pro", "SourceSansPro-SemiBold";
+  --title-02-font-size: 36px;
+  --title-02-letter-spacing: 0px;
+  --title-02-line-height: 120%;
+  --title-02-font-weight: 600;
+  --title-02-color: black;
+}
+
+/* close :root */
+@import 'stanford_cice/font';
+@import "stanford_cice/course_research";
+@import "stanford_cice/course_details";
+@import "stanford_cice/howto_details";
+@import "stanford_cice/overall_journey";
+@import "stanford_cice/cr_switch_event";
+@import "stanford_cice/cr_switch_event_flyout"; 
+@import "stanford_cice/buttons";
+@import "stanford_cice/tabs";
+@import "stanford_cice/common";
+@import "stanford_cice/checkboxes";
+@import "stanford_cice/radio_buttons";
+@import "stanford_cice/dropdown_list";
+@import "stanford_cice/input";
+@import "stanford_cice/slider";
+@import "stanford_cice/vcevents";
+@import "stanford_cice/rating_bar";
+@import "stanford_cice/advanced_filters";
+@import "stanford_cice/rc_slider";
+@import "stanford_cice/tooltip";
+@import "stanford_cice/link_card";
+@import "stanford_cice/link_list_card";
+@import "stanford_cice/header";
+@import "stanford_cice/search_box";
+@import "stanford_cice/niceselect";
+@import "stanford_cice/course_registration";
+@import "stanford_cice/modal_popup";
+
+#wrapper {
+  padding-top: 0;
+}
+
+.portlet-header {
+  display: none;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 500;
+  padding-top: 55px;
+}
+
+.sticky-toolbar {
+  padding-top: 120px;
+}
+
+.sticky-no-control__menu {
+  padding-top: 0px;
+}
+
+@mixin -footer-legend-general {
+  position: relative;
+  display: block;
+}
+
+.container {
+  height: 100%;
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 991px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+a {
+  color: $primary-maroon;
+}
+
+a:hover,
+a.hover {
+  color: $primary-maroon;
+  text-decoration: underline;
+}
+
+.title h1,
+.title h3 {
+  margin-bottom: 0;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute; 
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+.fs-11 {
+  font-size: 11px;
+}
+
+.fs-12 {
+  font-size: 12px;
+}
+
+.fw-sb {
+  font-weight: 600;
+}
+
+.btn {
+  border-radius: 0 !important;
+}
+
+.btn.btn-primary {
+  background: $primary-maroon;
+  border-color: $primary-maroon;
+}
+
+.dropdown.profile-btn {
+  border: none;
+}
+
+.dropdown-menu {
+  padding: 0 !important;
+}
+
+ol.breadcrumb {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  .breadcrumb-item {
+    .breadcrumb-text-truncate {
+      color: $black-100-color;
+      text-decoration: none;
+      font-size: 16px;
+      line-height: 24px;
+    }
+    &.active .breadcrumb-text-truncate {
+      color: $primary-maroon;
+    }
+  }
+  .breadcrumb-item + .breadcrumb-item::before {
+    background: transparent;
+    content: "::";
+    margin-top: -8px;
+    font-size: 16px; 
+  }
+}
+
+.flex-gap {
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.link-a-rrd {
+  cursor: pointer;
+  color: #000 !important;
+  text-decoration: none !important;
+  &:hover {
+    color: #00548f;
+  }
+}
+
+.breadcrumb-text-truncate {
+  a {
+    color: $black-100-color;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 24px;
+    &:hover {
+      color: $primary-maroon;
+    }
+  }
+  &:hover {
+    color: $primary-maroon !important;
+  }
+}
+
+.multiselectlist-dropdown-menu {
+  .custom-control-label-text {
+    width: 110px;
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}

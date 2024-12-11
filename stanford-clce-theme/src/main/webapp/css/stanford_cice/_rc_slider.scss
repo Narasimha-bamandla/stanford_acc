@@ -1,0 +1,398 @@
+// Define your color variables
+@import "colors";
+
+// Apply the styles with different sizes, states, types, and icon positions
+
+.sdtd-rcslider {
+	width: 100%; 
+	.rc-slider-handle {
+		width: 16px !important;
+		height: 16px !important;
+		flex-shrink: 0;
+		width: 100%;
+		border-radius: 12px;
+		border: 2px solid $primary-maroon;
+		background: $white;
+		cursor: pointer;
+		cursor: grab;
+		opacity: 0.8;
+		margin-top: -7px;
+		touch-action: pan-x;
+
+		&:active,
+		&:hover {
+			border-color: $primary-maroon;
+			box-shadow: 0 0 5px $primary-maroon;
+		}
+	} 
+	.rc-slider-rail {
+		height: 2px;
+		background: $black-20-color;
+	} 
+	.rc-slider-track,
+	.rc-slider-tracks {
+		height: 2px;
+		background-color: $primary-maroon;
+
+		&:before,
+		&:after {
+			content: "";
+			position: absolute;
+			width: 6px;
+			height: 10px;
+			background: $white;
+			z-index: 1;
+			top: -5px;
+			bottom: 0;
+			border-radius: 50%;
+		}
+
+		&:after {
+			right: 0;
+		}
+	} 
+	.rc-slider-handle-dragging {
+		border-color: $primary-maroon !important;
+		box-shadow: 0 0 5px $primary-maroon !important;
+	} 
+	.clay-range-input {
+		.tooltip-inner {
+			background: $bg-grey;
+			border: 1px solid $black-20-color;
+			color: $white;
+			border-radius: 0;
+			color: $black-100-color;
+			box-shadow: none;
+		}
+
+		.clay-tooltip-top {
+			.tooltip-arrow {
+				width: 0;
+				height: 0;
+				background: transparent;
+				border: 10px solid transparent;
+				border-width: 10px 10px 10px;
+				border-color: transparent $black-20-color $black-20-color transparent;
+				z-index: -1;
+				margin-left: -10px;
+			}
+		}
+
+		.tooltip {
+			margin-left: 0.475rem;
+		}
+
+		.form-control-range {
+			height: 16px;
+		}
+
+		.clay-range-thumb {
+			width: 16px !important;
+			height: 16px !important;
+			flex-shrink: 0;
+			width: 100%;
+			border-radius: 12px;
+			border: 2px solid $primary-maroon;
+			background: $white;
+			margin-top: -9px;
+		}
+
+		.clay-range-progress {
+			background-color: $primary-maroon;
+			height: 2px;
+		}
+
+	}
+	&.rc-slider {
+		position: relative;
+		width: 100%;
+		height: 14px;
+		padding: 5px 0;
+		border-radius: 6px;
+		touch-action: none;
+		box-sizing: border-box;
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	
+		* {
+			box-sizing: border-box;
+			-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+		}
+	
+		.rc-slider-rail {
+			position: absolute;
+			width: 100%;
+			height: 4px;
+			border-radius: 6px;
+		}
+	
+		.rc-slider-track {
+			position: absolute;
+			height: 4px;
+			border-radius: 6px;
+		}
+	
+		.rc-slider-tracks {
+			position: absolute;
+			height: 4px;
+			border-radius: 6px;
+		}
+	
+		.rc-slider-track-draggable {
+			z-index: 1;
+			box-sizing: content-box;
+			background-clip: content-box;
+			border-top: 5px solid rgba(0, 0, 0, 0);
+			border-bottom: 5px solid rgba(0, 0, 0, 0);
+			transform: translateY(-5px);
+		}
+	
+		.rc-slider-handle {
+			position: absolute;
+			z-index: 1;
+			width: 14px;
+			height: 14px;
+			margin-top: -5px;
+			border-radius: 50%;
+			cursor: pointer;
+			cursor: -webkit-grab;
+			cursor: grab;
+			opacity: 0.8;
+			touch-action: pan-x;
+	
+			&:focus {
+				outline: none;
+				box-shadow: none;
+			}
+			&:focus-visible {
+				outline: 2px solid;
+			}
+			&:active {
+				cursor: -webkit-grabbing;
+				cursor: grabbing;
+			}
+		}
+	
+		.rc-slider-handle-click-focused {
+			&:focus {
+				box-shadow: unset;
+			}
+		}
+	
+		.rc-slider-mark {
+			position: absolute;
+			top: 18px;
+			left: 0;
+			width: 100%;
+			font-size: 12px;
+		}
+	
+		.rc-slider-mark-text {
+			position: absolute;
+			display: inline-block;
+			text-align: center;
+			vertical-align: middle;
+			cursor: pointer;
+		}
+	
+		.rc-slider-step {
+			position: absolute;
+			width: 100%;
+			height: 4px;
+			background: transparent;
+		}
+	
+		.rc-slider-dot {
+			position: absolute;
+			bottom: -2px;
+			width: 8px;
+			height: 8px;
+			vertical-align: middle;
+			border-radius: 50%;
+			cursor: pointer;
+		}
+	
+		.rc-slider-dot-reverse {
+			margin-right: -4px;
+		}
+	
+		.rc-slider-disabled {
+			.rc-slider-handle {
+				box-shadow: none;
+				cursor: not-allowed;
+			}
+	
+			.rc-slider-dot {
+				box-shadow: none;
+				cursor: not-allowed;
+				cursor: not-allowed !important;
+			}
+	
+			.rc-slider-mark-text {
+				cursor: not-allowed !important;
+			}
+		}
+	
+		.rc-slider-vertical {
+			width: 14px;
+			height: 100%;
+			padding: 0 5px;
+	
+			.rc-slider-rail {
+				width: 4px;
+				height: 100%;
+			}
+	
+			.rc-slider-track {
+				bottom: 0;
+				left: 5px;
+				width: 4px;
+			}
+	
+			.rc-slider-track-draggable {
+				border-top: 0;
+				border-bottom: 0;
+				border-right: 5px solid rgba(0, 0, 0, 0);
+				border-left: 5px solid rgba(0, 0, 0, 0);
+				transform: translateX(-5px);
+			}
+	
+			.rc-slider-handle {
+				position: absolute;
+				z-index: 1;
+				margin-top: 0;
+				margin-left: -5px;
+				touch-action: pan-y;
+			}
+	
+			.rc-slider-mark {
+				top: 0;
+				left: 18px;
+				height: 100%;
+			}
+	
+			.rc-slider-step {
+				width: 4px;
+				height: 100%;
+			}
+	
+			.rc-slider-dot {
+				margin-left: -2px;
+			}
+		}
+	
+		.rc-slider-tooltip-zoom-down-enter {
+			display: block !important;
+			animation-duration: 0.3s;
+			animation-fill-mode: both;
+			animation-play-state: paused;
+			transform: scale(0, 0);
+			animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+		}
+	
+		.rc-slider-tooltip-zoom-down-appear {
+			display: block !important;
+			animation-duration: 0.3s;
+			animation-fill-mode: both;
+			animation-play-state: paused;
+			transform: scale(0, 0);
+			animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+		}
+	
+		.rc-slider-tooltip-zoom-down-leave {
+			display: block !important;
+			animation-duration: 0.3s;
+			animation-fill-mode: both;
+			animation-play-state: paused;
+			animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+		}
+	
+		.rc-slider-tooltip-zoom-down-enter.rc-slider-tooltip-zoom-down-enter-active {
+			animation-name: rcSliderTooltipZoomDownIn;
+			animation-play-state: running;
+		}
+	
+		.rc-slider-tooltip-zoom-down-appear.rc-slider-tooltip-zoom-down-appear-active {
+			animation-name: rcSliderTooltipZoomDownIn;
+			animation-play-state: running;
+		}
+	
+		.rc-slider-tooltip-zoom-down-leave.rc-slider-tooltip-zoom-down-leave-active {
+			animation-name: rcSliderTooltipZoomDownOut;
+			animation-play-state: running;
+		}
+	
+		.rc-slider-tooltip {
+			position: absolute;
+			top: -9999px;
+			left: -9999px;
+			visibility: visible;
+			box-sizing: border-box;
+			-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	
+			* {
+				box-sizing: border-box;
+				-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+			}
+		}
+	
+		.rc-slider-tooltip-hidden {
+			display: none;
+		}
+	
+		.rc-slider-tooltip-placement-top {
+			padding: 4px 0 8px 0;
+	
+			.rc-slider-tooltip-arrow {
+				bottom: 4px;
+				left: 50%;
+				margin-left: -4px;
+				border-width: 4px 4px 0;
+			}
+		}
+	
+		.rc-slider-tooltip-inner {
+			min-width: 24px;
+			height: 24px;
+			padding: 6px 2px;
+			font-size: 12px;
+			line-height: 1;
+			text-align: center;
+			text-decoration: none;
+			border-radius: 6px;
+		}
+	
+		.rc-slider-tooltip-arrow {
+			position: absolute;
+			width: 0;
+			height: 0;
+			border-style: solid;
+		}
+	}
+}
+
+@keyframes rcSliderTooltipZoomDownIn {
+	0% {
+		transform: scale(0, 0);
+		transform-origin: 50% 100%;
+		opacity: 0;
+	}
+
+	100% {
+		transform: scale(1, 1);
+		transform-origin: 50% 100%;
+	}
+}
+
+@keyframes rcSliderTooltipZoomDownOut {
+	0% {
+		transform: scale(1, 1);
+		transform-origin: 50% 100%;
+	}
+
+	100% {
+		transform: scale(0, 0);
+		transform-origin: 50% 100%;
+		opacity: 0;
+	}
+}
+

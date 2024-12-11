@@ -1,0 +1,78 @@
+@import 'colors';
+
+.course_comments {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 24px;
+    .content {
+        width: 949px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 0;
+    }
+    .filters {
+        display: flex;
+        width: 949px;
+        justify-content: space-between;
+        align-items: center;
+        .filter {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+        }
+    }
+    .comment_card {
+        width: 100%;
+        display: flex;
+        gap: 20px;
+        padding: 30px 20px;
+        border: 1px solid $black-20-color;
+        background:$white;
+        .date_likes {
+            gap: 12px !important;
+            .date {   
+                padding-left: 20px;
+                padding-right: 12px;
+                background-position: left;
+                background-repeat: no-repeat;
+                background-image: url('/o/stanford-clce-theme/images/icons/comment_icon.svg'); 
+                border-right: 1px solid $black-color-3;
+              }
+                button {
+                    border: none;
+                    background: transparent;
+                    padding: 0;
+                    display: inline-flex;
+                }
+              .likes {    
+                padding-left: 20px;
+                background-position: left;
+                background-repeat: no-repeat;
+                background-image: url('/o/stanford-clce-theme/images/icons/thumb_icon.svg'); 
+          
+              }
+        }
+
+        .left_col {
+             width:30%;
+            * {
+                margin: 0;
+            }
+         }
+        .right_col ,
+        .left_col {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 12px;
+            > div {
+                display: flex;
+                align-items: flex-start;
+                gap: 8px;
+            }
+        }
+    }
+}

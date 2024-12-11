@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE look-and-feel PUBLIC "-//Liferay//DTD Look and Feel 7.4.0//EN" "http://www.liferay.com/dtd/liferay-look-and-feel_7_4_0.dtd">
+
+<look-and-feel>
+	<compatibility>
+		<version>7.4.0+</version>
+	</compatibility>
+	<theme id="stanford-clce-theme" name="Stanford CLCE Theme">
+		<template-extension>ftl</template-extension>
+		<settings>
+  			<setting configurable="true" key="custom-logo-url" type="checkbox" value="true" />
+			<setting configurable="true" key="logo-url" type="text" value="" /> 
+			<setting configurable="true" key="show-header-title" type="checkbox" value="true" />
+			<setting configurable="true" key="header-title" type="text" value="" />
+			<setting configurable="true" key="show-search" type="checkbox" value="true" />
+			<setting configurable="true" key="link-course-listing" type="text" value="" />
+			<setting configurable="true" key="show-degree-progress" type="checkbox" value="true" />
+			<setting configurable="true" key="link-degree-progress" type="text" value="" />
+			<setting configurable="true" key="show-my-notes" type="checkbox" value="true" />
+			<setting configurable="true" key="link-my-notes" type="text" value="" />
+			<setting configurable="true" key="show-wishlist" type="checkbox" value="true" />
+			<setting configurable="true" key="link-wishlist" type="text" value="" />
+			<setting configurable="true" key="link-how-to" type="text" value="" />
+			<setting configurable="true" key="student-profile-menu-webcontent-id" type="text" value="" />
+			<setting configurable="true" key="staff-profile-menu-webcontent-id" type="text" value="" />
+			<setting configurable="true" key="ga-script" type="textarea" value="" />
+			<setting configurable="true" key="search-results-url" type="text" value="" />
+			<setting configurable="true" key="search-results-academic-year" type="text" value="" />
+			<setting configurable="true" key="link-course-config-settings" type="text" value="" />
+		</settings>
+		<roles>
+			<role-name>User</role-name>
+		</roles>
+		<portlet-decorator id="barebone" name="Barebone">
+			<portlet-decorator-css-class>portlet-barebone</portlet-decorator-css-class>
+		</portlet-decorator>
+		<portlet-decorator id="borderless" name="Borderless">
+			<default-portlet-decorator>true</default-portlet-decorator>
+			<portlet-decorator-css-class>portlet-borderless</portlet-decorator-css-class>
+		</portlet-decorator>
+		<portlet-decorator id="decorate" name="Decorate">
+			<portlet-decorator-css-class>portlet-decorate</portlet-decorator-css-class>
+		</portlet-decorator>
+	</theme>
+</look-and-feel>

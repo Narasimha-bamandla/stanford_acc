@@ -1,0 +1,38 @@
+// Define your color variables
+@import "colors";
+  
+// Apply the styles with different sizes, states, types, and icon positions
+ 
+.sdtd-input { 
+  &.form-control {
+    display: flex;
+    min-width: 120px;
+    padding: 10px 14px;
+    align-items: center;
+    gap: 8px;
+    align-self: stretch;
+    border: 1px solid $black-20-color;
+    background: $white;
+    border-radius: 0;
+    color: var(--text-body, #68737D); 
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    height: 36px;  
+    &:hover {
+      border: 1px solid $black-60-color; 
+    }
+    &:focus {
+      border: 1px solid $secondary-color; 
+    }  
+    &:focus-visible {
+      box-shadow: none;
+      border: 1px solid $secondary-color; 
+    }  
+    &:disabled {
+      border: 1px solid $black-20-color; 
+      background-color: $bg-grey;
+    }  
+  }
+}

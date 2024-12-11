@@ -1,0 +1,124 @@
+ @import "colors";
+
+
+
+ .sdfd-tabs { 
+   &.mw148 {
+    .nav-item .nav-link {
+      min-width: 148px;
+    }
+  }
+  &.fullwidth { 
+    align-items: stretch;
+    & .nav-item,  & .nav-link {  flex: 1; }
+  }
+   & .nav-item {
+
+     display: flex;
+     height: 40px;
+     justify-content: center;
+     align-items: center;
+   
+     align-self: stretch; 
+     & .nav-link {
+       background-color: transparent;
+       color: $black-100-color;
+       text-align: center;
+       font-size: 16px;
+       font-style: normal;
+       font-weight: 600;
+       line-height: 24px;
+       min-width: 200px;
+       border-radius: 0;
+       height: 40px;
+       text-decoration: none;
+       &:hover {
+         background-color: $bg-grey;
+         text-decoration: none;
+       }
+       &:focus {
+        border-radius: 0;
+      }
+     }
+
+   }
+   &.achor-tabs {
+    & .nav-item ,
+    & .nav-link { 
+      height: auto;
+      font-weight: 400;
+      text-decoration: none;
+    }
+    & .nav-item.active .nav-link { 
+      background: $bg-grey; 
+      font-weight: 600;
+    }
+   }
+   &.hline-tabs {
+    gap: 0 !important;
+     & .nav-item {  
+      & .nav-link {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        border: none !important;
+        border-bottom: 2px solid $black-20-color !important; 
+       &.active {
+         border-bottom: 2px solid $primary-maroon !important;  
+       }
+      }
+     }
+   }
+   &.vline-tabs {
+    gap: 0 !important;
+    flex-direction: column;
+     & .nav-item {  
+      & .nav-link {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;  
+        border: 1px solid $black-20-color !important; 
+       &.active, &:hover {
+         border-left: 4px solid $primary-maroon !important; 
+         padding: 8px 20px 8px 17px !important; 
+         color:$primary-maroon !important; 
+       }
+      }
+     }
+   } 
+  
+   &.top-round {
+    & .nav-item {
+      & .nav-link {
+        border-radius:  6px 6px 0px 0px;
+      }
+    }  
+   }
+   &.fill-tabs.border-bottom-none {
+    & .nav-item {
+      & .nav-link {
+        border-bottom:  none !important;
+      }
+    }  
+   }
+   &.fill-tabs {
+     & .nav-item {
+      padding-bottom: 2px;
+      gap: 10px;
+      & .nav-link {
+        border: 1px solid $black-20-color !important; 
+       &.active {
+         background-color: $black-100-color;
+         color: $white;
+
+         &:hover {
+           background-color: $black-100-color;
+         }
+       }
+      }
+     }
+   }
+
+
+
+ }

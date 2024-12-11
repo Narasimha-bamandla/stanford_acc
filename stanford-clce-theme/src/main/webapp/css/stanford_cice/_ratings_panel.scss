@@ -1,0 +1,40 @@
+@import 'colors';
+
+.ratings_panel {
+    background-color: $bg-grey;
+    display: flex;
+    width: 949px;
+    padding: 20px 32px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px; 
+    .sorting {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 16px;
+        line-height: 24px;
+        color: $black-color-3;
+    }
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        align-self: stretch;
+    }
+    .ratings {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        align-self: stretch;
+    }
+    .name {
+        flex:1; 
+        @include font-style($black-80-color, 13px, 600, 16px);
+    }
+    .rating {
+        width:30px;
+        @include font-style($black-80-color, 13px, 600, 16px);
+    } 
+}
