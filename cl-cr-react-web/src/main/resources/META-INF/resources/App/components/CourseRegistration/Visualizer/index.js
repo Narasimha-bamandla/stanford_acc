@@ -714,6 +714,7 @@ export default function Visualizer({
                                 >
                                   <button
                                     key={eventIndex}
+                                    aria-describedby={`visualizerTooltip${event?.uniqueID}`}
                                     className="event"
                                     style={{
                                       height: event.height,
@@ -809,9 +810,9 @@ export default function Visualizer({
                     overflow: "auto",
                     display: hoveredInfo ? "block" : "none",
                   }}
-                  role="region"
-                  aria-live="polite"
-                  id={`viSualizerTooltip${toolTipData?.uniqueID}`}
+                  role="tooltip"
+                  aria-modal="true"
+                  id={`visualizerTooltip${toolTipData?.uniqueID}`}
                   className="tooltip-popup"
                 >
                   <p
@@ -952,9 +953,9 @@ export default function Visualizer({
                       overflow: "auto",
                     }}
                     className="tooltip-popup"
-                    role="region"
-                    aria-live="polite"
-                    id={`viSualizerTooltip${event.events?.uniqueID}`}
+                    role="tooltip"
+                    aria-modal="true"
+                    id={`visualizerTooltip${event.events?.uniqueID}`}
                   >
                     <p
                       className="tooltip-para"
