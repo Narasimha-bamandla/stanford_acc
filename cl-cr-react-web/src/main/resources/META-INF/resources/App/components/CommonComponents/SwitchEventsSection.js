@@ -536,7 +536,7 @@ function SwitchEventsSection({
                         {switchContent ? (
                           <div
                             className="event_content "
-                            role="live"
+                            role="polite"
                             aria-labelledby={
                               "accordionid" +
                               switchData?.section
@@ -610,9 +610,9 @@ function SwitchEventsSection({
                                           )}
                                           <div className="custom-control custom-radio custom-control-outside">
                                             <label>
-                                              <input
-                                                aria-label="Collapse Listings"
-                                                role="checkbox"
+                                              <input 
+                                                aria-labelledby={"radio-label"+content?.sectionName+switchData?.section.replace(/\s+/g, '').toLowerCase()} 
+                                                role="radio"
                                                 aria-checked="false"
                                                 tabIndex="0"
                                                 className="custom-control-input sm"
@@ -698,7 +698,7 @@ function SwitchEventsSection({
                                                       </div>
                                                     </div>
                                                   )}{" "}
-                                                <strong>
+                                                <strong id={"radio-label"+content?.sectionName+switchData?.section.replace(/\s+/g, '').toLowerCase()} >
                                                   {`${
                                                     content?.switchRequestType ==
                                                     "DROP"
