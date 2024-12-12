@@ -221,8 +221,10 @@ export default function Visualizer({
     var conflictValue = event?.conflictStatus;
     if (conflictValue.toUpperCase() == "NOCONFLICT") {
       return {
-        background: "#003847",
-        color: "#FFFFFF",
+        // background: "#003847",
+        // color: "#FFFFFF",
+        background: "#009CBA",
+        color: "#fff",
       };
     }
     if (conflictValue.toUpperCase() == "CONFLICT") {
@@ -233,9 +235,12 @@ export default function Visualizer({
     }
     if (conflictValue.toUpperCase() == "PREFERENCECONFLICT") {
       return {
+        // background:
+        //   "repeating-linear-gradient(45deg, #186678 0,#186678 10%,transparent 0,transparent 50% )0% 0% / 1.5em 1.5em #003847",
+        // color: "#FFFFFF",
         background:
-          "repeating-linear-gradient(45deg, #186678 0,#186678 10%,transparent 0,transparent 50% )0% 0% / 1.5em 1.5em #003847",
-        color: "#FFFFFF",
+          "repeating-linear-gradient(45deg, #005b94 0, #005b94 10%, transparent 0, transparent 50%) 0% 0% / 1.5em 1.5em #019CBA",
+        color: "#fff",
       };
     }
     if (conflictValue.toUpperCase() == "ENROLLED") {
@@ -255,8 +260,10 @@ export default function Visualizer({
     } else if (event?.preference) {
       if (event?.conflictStatus == "NoConflict") {
         return {
-          background: "#003847",
-          color: "#FFFFFF",
+          // background: "#003847",
+          // color: "#FFFFFF",
+          background: "#009CBA",
+          color: "#fff",
         }; //teal
       }
 
@@ -269,9 +276,12 @@ export default function Visualizer({
 
       if (event?.conflictStatus == "PreferenceConflict") {
         return {
+          // background:
+          //   "repeating-linear-gradient(45deg, #186678 0,#186678 10%,transparent 0,transparent 50% )0% 0% / 1.5em 1.5em #003847",
+          // color: "#FFFFFF",
           background:
-            "repeating-linear-gradient(45deg, #186678 0,#186678 10%,transparent 0,transparent 50% )0% 0% / 1.5em 1.5em #003847",
-          color: "#FFFFFF",
+            "repeating-linear-gradient(45deg, #005b94 0, #005b94 10%, transparent 0, transparent 50%) 0% 0% / 1.5em 1.5em #019CBA",
+          color: "#fff",
         };
       }
     }
@@ -487,7 +497,8 @@ export default function Visualizer({
                       {quaterArrayList?.map((item, index) => (
                         <div role="presentation" key={item.id}>
                           <button
-                            className="dropdown-item item"
+                            // className="dropdown-item item"
+                            className="dropdown-item"
                             role="menuitem"
                             aria-pressed={
                               index === quarterActiveIndex ? true : false
@@ -535,7 +546,8 @@ export default function Visualizer({
                     {displayedWeeks.map((week, index) => (
                       <ClayButton
                         key={index}
-                        className={index === WeekActiveIndex ? "Select" : ""}
+                        // className={index === WeekActiveIndex ? "Select" : ""}
+                        className={index === WeekActiveIndex ? "active" : ""}
                         aria-pressed={index === WeekActiveIndex ? true : false}
                         size={4}
                         aria-controls="VisuilizerInfo"
@@ -806,7 +818,8 @@ export default function Visualizer({
                     top: marginTop == `0px` ? "" : marginTop,
                     bottom: marginBottom,
                     zIndex: 99999,
-                    maxHeight: "205px",
+                    // maxHeight: "205px",
+                    maxHeight: "165px",
                     overflow: "auto",
                     display: hoveredInfo ? "block" : "none",
                   }}
@@ -949,7 +962,8 @@ export default function Visualizer({
                       left: event.marginleft,
                       bottom: event.marginBottom,
                       top: event.marginTop == `0px` ? "" : event.marginTop,
-                      maxHeight: "205px",
+                      //maxHeight: "205px",
+                      maxHeight: "165px",
                       overflow: "auto",
                     }}
                     className="tooltip-popup"
@@ -1142,7 +1156,7 @@ export default function Visualizer({
               <div className="Legends col">
                 <div
                   className="Conflict LegendIcons"
-                  style={{ backgroundColor: "#003847" }}
+                  style={{ backgroundColor: "#019CBA" }}
                 >
                   <img
                     alt="Preferenced Courses"
@@ -1174,8 +1188,10 @@ export default function Visualizer({
                 <div
                   className="Conflict LegendIcons"
                   style={{
+                    // background:
+                    //   "repeating-linear-gradient(45deg, #186678 0,#186678 10%,transparent 0,transparent 50% )0% 0% / 1.5em 1.5em #003847",
                     background:
-                      "repeating-linear-gradient(45deg, #186678 0,#186678 10%,transparent 0,transparent 50% )0% 0% / 1.5em 1.5em #003847",
+                      "repeating-linear-gradient(45deg, #005b94 0, #005b94 10%, transparent 0, transparent 50%) 0% 0% / 1.5em 1.5em #019CBA",
                   }}
                 >
                   <img
@@ -1218,9 +1234,12 @@ export default function Visualizer({
                         style={
                           conflictData.conflictStatus === "PreferenceConflict"
                             ? {
+                                // background:
+                                //   "repeating-linear-gradient(45deg, #186678 0,#186678 10%,transparent 0,transparent 50% )0% 0% / 1.5em 1.5em #003847",
+                                // color: "#FFFFFF",
                                 background:
-                                  "repeating-linear-gradient(45deg, #186678 0,#186678 10%,transparent 0,transparent 50% )0% 0% / 1.5em 1.5em #003847",
-                                color: "#FFFFFF",
+                                  "repeating-linear-gradient(45deg, #005b94 0, #005b94 10%, transparent 0, transparent 50%) 0% 0% / 1.5em 1.5em #019CBA",
+                                color: "#fff",
                               }
                             : {}
                         }
