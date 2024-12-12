@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { Row, Col, ContainerFluid } from "@clayui/layout";
+import React from "react";
 import RecommendedToolTip from "../../CommonComponents/RecommendedToolTip";
 import NoDataFound from "../../CommonComponents/NoDataFound";
 import OvalLoader from "../../CommonComponents/OvalLoader";

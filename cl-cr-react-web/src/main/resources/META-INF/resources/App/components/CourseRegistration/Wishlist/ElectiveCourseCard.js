@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Row, Col, ContainerFluid } from "@clayui/layout";
 import LockIconTooltip from "../../CommonComponents/LockIconTooltip";
 import { Link } from "react-router-dom";
 
