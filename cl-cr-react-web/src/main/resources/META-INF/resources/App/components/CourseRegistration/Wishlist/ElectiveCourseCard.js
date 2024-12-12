@@ -80,7 +80,7 @@ const ElectiveCourseCard = ({
   }, []);
 
   return (
-    <ContainerFluid
+    <div
       className={
         data.checked ? "wec-container selected-elective" : "wec-container"
       }
@@ -110,78 +110,109 @@ const ElectiveCourseCard = ({
           </label>
         </div>
       )}
-      <Row justify="between">
-        <Col size={2}>
-          <div style={{ display: "flex", alignItems: "center", gap: "5px" }}>
-            <div>
-              <strong>
-                {data.subject_code} {data.catalog_number_code} -{" "}
-                {data.class_section}
-              </strong>
-            </div>
-            {data.isPermissionRequired != null && (
-              <div>
-                <LockIconTooltip
-                  message={data.isPermissionRequired}
-                  onCloseWishlist={onCloseWishlist}
-                />
-              </div>
-            )}
-          </div>
-        </Col>
-        <Col size={4}>
-          <div>{data.title}</div>
-        </Col>
-        <Col size={"auto"}>
-          <strong>Units: </strong> {data.units}
-        </Col>
-        <Col size={2}>
-          <strong>Quarter:</strong> {data.quarter}
-        </Col>
-        <Col size={"auto"}>
-          <strong>Grading Basis:</strong> {data.gradingBasis}
-        </Col>
-      </Row>
-      <hr />
-      <Row key={index} justify="between" style={{ marginRight: "10px" }}>
-        <Col size={"auto"}>
-          {data?.instructorsResponse?.map(
-            (instructorsResponseArray, dayIndex) => (
-              <span key={dayIndex}>
-                <Link
-                  className="instructors-name"
-                  to={instructorsResponseArray.instructorUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {instructorsResponseArray.instructorName}
-                </Link>
-                {dayIndex !== data?.instructorsResponse?.length - 1
-                  ? " | "
-                  : ""}
-              </span>
-            )
-          )}
-        </Col>
-        <Col size={"auto"}>
-          {data?.meetingDaysDateMap &&
-            Object.keys(data?.meetingDaysDateMap).map((dateRange) => {
-              const meetingTimes = data?.meetingDaysDateMap[dateRange];
-              return (
-                <div key={dateRange} style={{ display: "flex", gap: "10px" }}>
-                  <div>{dateRange} </div>
-                  <div>
-                    {Object.keys(meetingTimes).map((day) => (
-                      <div key={day}>
-                        {day} {meetingTimes[day]}
-                      </div>
-                    ))}
-                  </div>
+      <table style={{ width: "100%" }}>
+        <thead>
+          <tr>
+            <th style={{ position: "absolute" }}></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td width={"14%"}>
+              <div
+                style={{ display: "flex", alignItems: "center", gap: "5px" }}
+              >
+                <div>
+                  <strong>
+                    {data.subject_code} {data.catalog_number_code} -{" "}
+                    {data.class_section}
+                  </strong>
                 </div>
-              );
-            })}
-        </Col>
-      </Row>
+                {data.isPermissionRequired != null && (
+                  <div>
+                    <LockIconTooltip
+                      message={data.isPermissionRequired}
+                      onCloseWishlist={onCloseWishlist}
+                    />
+                  </div>
+                )}
+              </div>
+            </td>
+            <td width={"26%"}>
+              <div>{data.title}</div>
+            </td>
+            <td width={"9%"}>
+              <strong>Units: </strong> {data.units}
+            </td>
+            <td width={"9%"}>
+              <strong>Quarter:</strong> {data.quarter}
+            </td>
+            <td width={"13%"}>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "end",
+                  gap: "5px",
+                }}
+              >
+                <strong>Grading Basis:</strong> {data.gradingBasis}
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr />
+      <table style={{ width: "100%" }}>
+        <thead>
+          <tr>
+            <th style={{ position: "absolute" }}></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style={{ display: "flex", justifyContent: "space-between" }}>
+            <td>
+              {data?.instructorsResponse?.map(
+                (instructorsResponseArray, dayIndex) => (
+                  <span key={dayIndex}>
+                    <Link
+                      className="instructors-name"
+                      to={instructorsResponseArray.instructorUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {instructorsResponseArray.instructorName}
+                    </Link>
+                    {dayIndex !== data?.instructorsResponse?.length - 1
+                      ? " | "
+                      : ""}
+                  </span>
+                )
+              )}
+            </td>
+            <td>
+              {data?.meetingDaysDateMap &&
+                Object.keys(data?.meetingDaysDateMap).map((dateRange) => {
+                  const meetingTimes = data?.meetingDaysDateMap[dateRange];
+                  return (
+                    <div
+                      key={dateRange}
+                      style={{ display: "flex", gap: "10px" }}
+                    >
+                      <div>{dateRange} </div>
+                      <div>
+                        {Object.keys(meetingTimes).map((day) => (
+                          <div key={day}>
+                            {day} {meetingTimes[day]}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })}
+            </td>
+          </tr>
+        </tbody>
+      </table>
       {!data.export && sectionType == "planned" && (
         <div className="wec-disclaimer">
           <div>
@@ -226,7 +257,7 @@ const ElectiveCourseCard = ({
           </div>
         </div>
       )}
-    </ContainerFluid>
+    </div>
   );
 };
 

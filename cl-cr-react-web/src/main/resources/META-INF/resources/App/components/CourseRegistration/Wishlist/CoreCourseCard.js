@@ -28,137 +28,168 @@ const CoreCourseCard = ({
         Object?.keys(data)?.length > 0 &&
         data?.coreCourses?.map((data, dataIndex) => {
           return (
-            <ContainerFluid className="wcc-container" key={dataIndex}>
-              <Row>
-                <Col size={3}>
-                  <strong
-                    style={{ fontSize: "16px" }}
-                    title={`${data.groupName}`}
-                  >
-                    {data.groupName}
-                  </strong>
-                </Col>
-                {data.recommended ? (
-                  <Col>
-                    <div
+            <div className="wcc-container" style={{ width: "100%" }}>
+              <table style={{ width: "100%" }}>
+                <thead>
+                  <tr>
+                    <th style={{ position: "absolute" }}></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td width={"25%"}>
+                      <strong
+                        style={{ fontSize: "16px" }}
+                        title={`${data.groupName}`}
+                      >
+                        {data.groupName}
+                      </strong>
+                    </td>
+                    <td width={"43%"}>
+                      {data.recommended ? (
+                        <div
+                          style={{
+                            width: "298px",
+                            textOverflow: "ellipsis",
+                            overflow: " hidden",
+                            whiteSpace: "nowrap",
+                          }}
+                          title={`${data.subject_code} ${data.catalog_number_code} - ${data.title}`}
+                        >
+                          {data.subject_code} {data.catalog_number_code} -{" "}
+                          {data.title}
+                        </div>
+                      ) : (
+                        <div
+                          style={{
+                            width: "400px",
+                            textOverflow: "ellipsis",
+                            overflow: " hidden",
+                            whiteSpace: "nowrap",
+                          }}
+                          title={`${data.subject_code} ${data.catalog_number_code} - ${data.title}`}
+                        >
+                          {data.subject_code} {data.catalog_number_code} -{" "}
+                          {data.title}
+                        </div>
+                      )}
+                    </td>
+                    <td width={"auto"}>
+                      {data.recommended ? (
+                        <RecommendedToolTip onCloseWishlist={onCloseWishlist} />
+                      ) : (
+                        <></>
+                      )}
+                    </td>
+                    <td
                       style={{
-                        width: "298px",
-                        textOverflow: "ellipsis",
-                        overflow: " hidden",
-                        whiteSpace: "nowrap",
+                        display: "flex",
+                        justifyContent: "end",
+                        width: "auto",
+                        gap: "5px",
                       }}
-                      title={`${data.subject_code} ${data.catalog_number_code} - ${data.title}`}
                     >
-                      {data.subject_code} {data.catalog_number_code} -{" "}
-                      {data.title}
-                    </div>
-                  </Col>
-                ) : (
-                  <Col>
-                    <div
-                      style={{
-                        width: "400px",
-                        textOverflow: "ellipsis",
-                        overflow: " hidden",
-                        whiteSpace: "nowrap",
-                      }}
-                      title={`${data.subject_code} ${data.catalog_number_code} - ${data.title}`}
-                    >
-                      {data.subject_code} {data.catalog_number_code} -{" "}
-                      {data.title}
-                    </div>
-                  </Col>
-                )}
-                {data.recommended ? (
-                  <Col size={2}>
-                    <RecommendedToolTip onCloseWishlist={onCloseWishlist} />
-                  </Col>
-                ) : (
-                  <></>
-                )}
-                <Col size={2} style={{ textAlign: "right" }}>
-                  <strong>Type:</strong> {data.mfLevelName}
-                </Col>
-              </Row>
+                      <strong>Type: </strong> {data.mfLevelName}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
               <hr />
-              {data.sections?.length > 0 ? (
-                data.sections.map((section, index) => {
-                  return (
-                    <Row
-                      key={index}
-                      justify="between"
-                      style={{ marginRight: "10px", marginBottom: "10px" }}
-                    >
-                      <Col size={"2"}>Section {section.class_section}</Col>
-                      <Col size={"4"}>
-                        {section?.instructorsResponse?.map(
-                          (instructorsResponseArray, dayIndex) => (
-                            <>
-                              <Link
-                                className="instructors-name"
-                                to={instructorsResponseArray.instructorUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                key={dayIndex}
-                              >
-                                {instructorsResponseArray.instructorName}
-                              </Link>
-                              {dayIndex !==
-                              section?.instructorsResponse?.length - 1
-                                ? ", "
-                                : ""}
-                            </>
-                          )
-                        )}
-                      </Col>
-                      <Col size={"2"}>{section.units} Units</Col>
-                      <Col size={"4"}>
-                        {section?.meetingDaysDateMap &&
-                          Object.keys(section?.meetingDaysDateMap).map(
-                            (dateRange, dateRangeIndex) => {
-                              return (
-                                <div
-                                  style={{ display: "flex", gap: "5px" }}
-                                  key={dateRangeIndex}
-                                >
-                                  {dateRange}{" "}
-                                  <div>
-                                    <div>
-                                      {Object.keys(
-                                        section?.meetingDaysDateMap[dateRange]
-                                      ).map((days) => {
-                                        return <>{days}</>;
-                                      })}{" "}
-                                      {Object.values(
-                                        section?.meetingDaysDateMap[dateRange]
-                                      ).map((time) => {
-                                        return <>{time}</>;
-                                      })}
+              <table style={{ width: "100%" }}>
+                <colgroup>
+                  <col width="17%" />
+                  <col width="33%" />
+                  <col width="18%" />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th style={{ position: "absolute" }}></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {data.sections?.length > 0 ? (
+                    data.sections.map((section, index) => {
+                      return (
+                        <tr key={index}>
+                          <td style={{ paddingBottom: "10px" }}>
+                            Section {section.class_section}
+                          </td>
+                          <td style={{ paddingBottom: "10px" }}>
+                            {section?.instructorsResponse?.map(
+                              (instructorsResponseArray, dayIndex) => (
+                                <>
+                                  <Link
+                                    className="instructors-name"
+                                    to={instructorsResponseArray.instructorUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    key={dayIndex}
+                                  >
+                                    {instructorsResponseArray.instructorName}
+                                  </Link>
+                                  {dayIndex !==
+                                  section?.instructorsResponse?.length - 1
+                                    ? ", "
+                                    : ""}
+                                </>
+                              )
+                            )}
+                          </td>
+                          <td style={{ paddingBottom: "10px" }}>
+                            {section.units} Units
+                          </td>
+                          <td style={{ paddingBottom: "10px" }}>
+                            {section?.meetingDaysDateMap &&
+                              Object.keys(section?.meetingDaysDateMap).map(
+                                (dateRange, dateRangeIndex) => {
+                                  return (
+                                    <div
+                                      style={{ display: "flex", gap: "5px" }}
+                                      key={dateRangeIndex}
+                                    >
+                                      {dateRange}{" "}
+                                      <div>
+                                        <div>
+                                          {Object.keys(
+                                            section?.meetingDaysDateMap[
+                                              dateRange
+                                            ]
+                                          ).map((days) => {
+                                            return <>{days}</>;
+                                          })}{" "}
+                                          {Object.values(
+                                            section?.meetingDaysDateMap[
+                                              dateRange
+                                            ]
+                                          ).map((time) => {
+                                            return <>{time}</>;
+                                          })}
+                                        </div>
+                                      </div>
                                     </div>
-                                  </div>
-                                </div>
-                              );
-                            }
-                          )}
-                      </Col>
-                    </Row>
-                  );
-                })
-              ) : (
-                <></>
-              )}
+                                  );
+                                }
+                              )}
+                          </td>
+                        </tr>
+                      );
+                    })
+                  ) : (
+                    <></>
+                  )}
+                </tbody>
+              </table>
               {!data.export && (
                 <div
                   className="disclaimer"
                   style={{
                     display: "flex",
                     gap: "10px",
-                    alignItems: "center",
+                    alignItems: "flex-end",
                     border: "1px solid #D5D5D4",
                     padding: "5px 10px",
                     background: "#f7f7f7",
                     color: "#BB2625",
-                    marginTop: "10px",
                   }}
                 >
                   <div>
@@ -205,7 +236,7 @@ const CoreCourseCard = ({
                   </div>
                 </div>
               )}
-            </ContainerFluid>
+            </div>
           );
         })}
     </>
