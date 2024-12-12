@@ -369,7 +369,7 @@ function SwitchEventsFilters({
         className="DropdownList dropdown dropdown-btn"
         role="combobox"
         aria-labelledby={label + "-dropdown"}
-        aria-expanded="false"
+        aria-expanded={dropdownActive[label] ? "true" : "false"}
         aria-controls={label + "-dropdown-menu"}
         style={{ width: "100% !important", backgroundColor: "#F7F7F7" }}
       >
@@ -377,7 +377,7 @@ function SwitchEventsFilters({
           className={"dropdown-toggle btn"}
           type="button"
           aria-controls={label + "-dropdown-menu"}
-          aria-expanded={dropdownActive}
+          aria-expanded={dropdownActive[label] ? "true" : "false"}
           aria-haspopup="listbox"
           active={0}
           modern
