@@ -138,7 +138,17 @@ const ElectiveCourseCard = ({
               </div>
             </td>
             <td width={"26%"}>
-              <div>{data.title}</div>
+              <div
+                style={{
+                  width: "260px",
+                  textOverflow: "ellipsis",
+                  overflow: "hidden",
+                  whiteSpace: "nowrap",
+                }}
+                title={data.title}
+              >
+                {data.title}
+              </div>
             </td>
             <td width={"9%"}>
               <strong>Units: </strong> {data.units}

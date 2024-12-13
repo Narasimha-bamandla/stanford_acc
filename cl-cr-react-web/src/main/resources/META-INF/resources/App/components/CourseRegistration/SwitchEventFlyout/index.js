@@ -40,34 +40,7 @@ const SwitchEventFlyout = ({
     );
   };
 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (
-        open &&
-        !isLoading &&
-        event.target.className == "fade modal d-block modal_popup show"
-      ) {
-        onOpenChange(false);
-        setActiveCardStatus(true);
-        setInActiveCardStatus(false);
-        setCompletedStatus(false);
-      }
-    };
-    const handleEscape = (event) => {
-      if (event.key === "Escape" && !isLoading) {
-        onOpenChange(false);
-        setActiveCardStatus(true);
-        setInActiveCardStatus(false);
-        setCompletedStatus(false);
-      }
-    };
-    document.addEventListener("click", handleClickOutside);
-    document.addEventListener("keydown", handleEscape);
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
-      document.removeEventListener("keydown", handleEscape);
-    };
-  }, [open]);
+  const [isModalFocused, setIsModalFocused] = useState(false);
 
   const handleKeep = () => {
     setEnableDeleteModel(false);
@@ -262,6 +235,85 @@ const SwitchEventFlyout = ({
     }
   }, [open]);
 
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Tab") {
+        const modalContent = document.querySelector(
+          ".view-your-requests-modal"
+        );
+        const focusableElements = modalContent.querySelectorAll(
+          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        );
+        const firstFocusable = focusableElements[0];
+        const lastFocusable = focusableElements[focusableElements.length - 1];
+
+        if (focusableElements.length > 0) {
+          if (e.shiftKey && document.activeElement === firstFocusable) {
+            e.preventDefault();
+            lastFocusable.focus();
+          } else if (!e.shiftKey && document.activeElement === lastFocusable) {
+            e.preventDefault();
+            firstFocusable.focus();
+          }
+        }
+      } else if (e.key === "Escape") {
+        handleCloseModal();
+      }
+    };
+
+    const handleFocusInModal = (e) => {
+      const modalContent = document.querySelector(".view-your-requests-modal");
+      if (modalContent && modalContent.contains(e.target)) {
+        setIsModalFocused(true);
+      } else {
+        setIsModalFocused(false);
+      }
+    };
+
+    const handleClickOutside = (event) => {
+      if (
+        open &&
+        !isLoading &&
+        event.target.className == "fade modal d-block modal_popup show"
+      ) {
+        onOpenChange(false);
+        setActiveCardStatus(true);
+        setInActiveCardStatus(false);
+        setCompletedStatus(false);
+      }
+    };
+
+    const handleEscape = (event) => {
+      if (event.key === "Escape" && !isLoading) {
+        onOpenChange(false);
+        setActiveCardStatus(true);
+        setInActiveCardStatus(false);
+        setCompletedStatus(false);
+      }
+    };
+
+    if (open) {
+      document.addEventListener("keydown", handleKeyDown);
+      document.addEventListener("focusin", handleFocusInModal);
+      const modalContent = document.querySelector(".view-your-requests-modal");
+      modalContent.focus();
+      const allFocusableElements = document.querySelectorAll("button");
+      allFocusableElements.forEach(function (element) {
+        element.setAttribute("tabindex", "0");
+      });
+    } else {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.removeEventListener("focusin", handleFocusInModal);
+    }
+
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+      document.removeEventListener("keydown", handleEscape);
+      document.removeEventListener("focusin", handleFocusInModal);
+    };
+  }, [open]);
+
   return (
     <div
       className="cr-switch-event-flyout course_registration"
@@ -283,9 +335,9 @@ const SwitchEventFlyout = ({
         <div
           aria-labelledby="switch-event-info"
           aria-modal="true"
-          className="modal-dialog modal-full-screen modal-info modal-content "
+          className="modal-dialog modal-full-screen modal-info modal-content view-your-requests-modal"
           role="dialog"
-          tabIndex={0}
+          tabIndex={isModalFocused ? "0" : "-1"}
         >
           <div className="modal_popup-container container-fluid container-view container-fluid-max-xl">
             <SEFlyoutBanner
